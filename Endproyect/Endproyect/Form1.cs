@@ -46,7 +46,7 @@ namespace Endproyect
                 }
                 else
                 {
-                    Console.WriteLine("No hay datos existentes");
+                    Console.WriteLine("No Existen datos");
                 }
                 conectionDatabase.Close();
 
@@ -119,7 +119,7 @@ namespace Endproyect
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
     }

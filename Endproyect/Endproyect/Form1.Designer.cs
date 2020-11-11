@@ -28,6 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup4 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup5 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
             this.NOMBRE = new System.Windows.Forms.Label();
             this.APELLIDO = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,6 +46,12 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // NOMBRE
@@ -71,9 +82,9 @@
             this.label2.Font = new System.Drawing.Font("Felix Titling", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(525, 19);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(183, 19);
+            this.label2.Size = new System.Drawing.Size(169, 19);
             this.label2.TabIndex = 2;
-            this.label2.Text = "N° DE CONNTACTO";
+            this.label2.Text = "N° DE CONTACTO";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
@@ -140,12 +151,36 @@
             // 
             // listView1
             // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader1,
+            this.columnHeader6});
+            listViewGroup1.Header = "ListViewGroup";
+            listViewGroup1.Name = "NOMBRE";
+            listViewGroup2.Header = "ListViewGroup";
+            listViewGroup2.Name = "APELLIDO";
+            listViewGroup3.Header = "ListViewGroup";
+            listViewGroup3.Name = "CONTACTO";
+            listViewGroup4.Header = "ListViewGroup";
+            listViewGroup4.Name = "CORREO";
+            listViewGroup5.Header = "ListViewGroup";
+            listViewGroup5.Name = "ESPECIALIDAD";
+            this.listView1.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
+            listViewGroup1,
+            listViewGroup2,
+            listViewGroup3,
+            listViewGroup4,
+            listViewGroup5});
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(25, 174);
+            this.listView1.Location = new System.Drawing.Point(12, 174);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(652, 381);
+            this.listView1.Size = new System.Drawing.Size(665, 381);
             this.listView1.TabIndex = 10;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // button1
@@ -169,6 +204,36 @@
             this.button2.Text = "MOSTRAR DATOS";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "ID";
+            this.columnHeader2.Width = 83;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "NOMBRE";
+            this.columnHeader3.Width = 108;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "APELLIDO";
+            this.columnHeader4.Width = 114;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "CONTACTO";
+            this.columnHeader5.Width = 109;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "CORREO";
+            this.columnHeader1.Width = 139;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "ESPECIALIDAD";
+            this.columnHeader6.Width = 149;
             // 
             // Form1
             // 
@@ -212,6 +277,12 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
     }
 }
 
