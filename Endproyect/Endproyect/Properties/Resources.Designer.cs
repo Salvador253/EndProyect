@@ -69,5 +69,25 @@ namespace Endproyect.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap radiografia_lateral_craneo {
+            get {
+                object obj = ResourceManager.GetObject("radiografia-lateral-craneo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap radiografia_torax_22350_715 {
+            get {
+                object obj = ResourceManager.GetObject("radiografia-torax_22350-715", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

@@ -101,5 +101,11 @@
   <ItemGroup>
     <None Include="Resources\maxresdefault.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\radiografia-lateral-craneo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\radiografia-torax_22350-715.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
