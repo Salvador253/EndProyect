@@ -21,7 +21,7 @@ namespace Endproyect
 
         private void Registrar()
         {
-            string connect = "datasource=localhost;port=3306;username=root;password=;database=usuarios";
+            string connect = "datasource=localhost;port=3306;username=root;password=;database=xray";
             string query = "SELECT from user where username = '" + textBox1.Text + "' AND password ='" + textBox2.Text + "'";
             MySqlConnection databaseConnection = new MySqlConnection(connect);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
@@ -71,12 +71,19 @@ namespace Endproyect
         private void button2_Click(object sender, EventArgs e)
         {
             Registrar();
+            Form4 menu = new Form4();
+            menu.Show();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Form3 login = new Form3();
             login.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
         }
     }
 }
