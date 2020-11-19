@@ -37,8 +37,8 @@ namespace Endproyect
                     while (reader.Read())
                     {
 
-                        //Console.WriteLine(reader.GetString(0) + " " + reader.GetString(1) + " " + reader.GetString(2) + " "+reader.GetString(3));
-                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3) };
+                        
+                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5) };
                         var listViewItem = new ListViewItem(row);
                         listView1.Items.Add(listViewItem);
 
@@ -57,7 +57,64 @@ namespace Endproyect
             }
         }
 
-        private void NOMBRE_Click(object sender, EventArgs e)
+        private void GuardarUsuario()
+        {
+            string connection = "datasource=localhost;port=3306;username=root;password=;database=xray";
+            string query = "INSERT INTO empleados(`id`, `apellido`, `nombre`, `correo`, `n_contacto`, `especialidad`) VALUES (NULL, '" + textBox1.Text + "', '" + textBox2.Text + "', '" + textBox3.Text + "' ,'" + textBox4.Text + "' ,'" + textBox5.Text + "')";
+            MySqlConnection conectionDatabase = new MySqlConnection(connection);
+            MySqlCommand databaseCommand = new MySqlCommand(query, conectionDatabase);
+            databaseCommand.CommandTimeout = 60;
+
+            try
+            {
+                conectionDatabase.Open();
+                MySqlDataReader reader1 = databaseCommand.ExecuteReader();
+                MessageBox.Show("GUARDADO CON EXITO");
+                conectionDatabase.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void MostrarUsuario()
+        {
+            string connection = "datasource=localhost;port=3306;username=root;password=;database=xray";
+            string query = "SELECT * FROM empleados ";
+            MySqlConnection conectionDatabase = new MySqlConnection(connection);
+            MySqlCommand databaseCommand = new MySqlCommand(query, conectionDatabase);
+            databaseCommand.CommandTimeout = 60;
+            MySqlDataReader reader;
+            try
+            {
+                conectionDatabase.Open();
+                reader = databaseCommand.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+
+                       
+                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5) };
+                        var listViewItem = new ListViewItem(row);
+                        listView1.Items.Add(listViewItem);
+
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("No Existen datos");
+                }
+                conectionDatabase.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+            private void NOMBRE_Click(object sender, EventArgs e)
         {
 
         }
@@ -114,12 +171,38 @@ namespace Endproyect
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            GuardarUsuario();
+            MostrarUsuario();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            MostrarUsuario();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
         }
     }
     }
