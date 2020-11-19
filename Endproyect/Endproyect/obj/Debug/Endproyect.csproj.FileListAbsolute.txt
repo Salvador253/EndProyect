@@ -50,3 +50,5 @@ C:\Users\Judith Vargas\Documents\GitHub\EndProyect\Endproyect\Endproyect\obj\Deb
 C:\Users\Judith Vargas\Documents\GitHub\EndProyect\Endproyect\Endproyect\obj\Debug\Endproyect.csproj.CopyComplete
 C:\Users\Judith Vargas\Documents\GitHub\EndProyect\Endproyect\Endproyect\obj\Debug\Endproyect.exe
 C:\Users\Judith Vargas\Documents\GitHub\EndProyect\Endproyect\Endproyect\obj\Debug\Endproyect.pdb
+C:\Users\1047483\OneDrive\Documentos\GitHub\EndProyect\Endproyect\Endproyect\obj\Debug\Endproyect.Form2.resources
+C:\Users\1047483\OneDrive\Documentos\GitHub\EndProyect\Endproyect\Endproyect\obj\Debug\Endproyect.Form3.resources
