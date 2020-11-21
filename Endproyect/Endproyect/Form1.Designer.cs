@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewGroup listViewGroup21 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup22 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup23 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup24 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup25 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup4 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup5 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
             this.NOMBRE = new System.Windows.Forms.Label();
             this.APELLIDO = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -57,6 +57,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // NOMBRE
@@ -163,22 +165,22 @@
             this.columnHeader5,
             this.columnHeader1,
             this.columnHeader6});
-            listViewGroup21.Header = "ListViewGroup";
-            listViewGroup21.Name = "NOMBRE";
-            listViewGroup22.Header = "ListViewGroup";
-            listViewGroup22.Name = "APELLIDO";
-            listViewGroup23.Header = "ListViewGroup";
-            listViewGroup23.Name = "CONTACTO";
-            listViewGroup24.Header = "ListViewGroup";
-            listViewGroup24.Name = "CORREO";
-            listViewGroup25.Header = "ListViewGroup";
-            listViewGroup25.Name = "ESPECIALIDAD";
+            listViewGroup1.Header = "ListViewGroup";
+            listViewGroup1.Name = "NOMBRE";
+            listViewGroup2.Header = "ListViewGroup";
+            listViewGroup2.Name = "APELLIDO";
+            listViewGroup3.Header = "ListViewGroup";
+            listViewGroup3.Name = "CONTACTO";
+            listViewGroup4.Header = "ListViewGroup";
+            listViewGroup4.Name = "CORREO";
+            listViewGroup5.Header = "ListViewGroup";
+            listViewGroup5.Name = "ESPECIALIDAD";
             this.listView1.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup21,
-            listViewGroup22,
-            listViewGroup23,
-            listViewGroup24,
-            listViewGroup25});
+            listViewGroup1,
+            listViewGroup2,
+            listViewGroup3,
+            listViewGroup4,
+            listViewGroup5});
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(12, 174);
             this.listView1.Name = "listView1";
@@ -261,14 +263,10 @@
             // 
             // button3
             // 
-            this.button3.Font = new System.Drawing.Font("Felix Titling", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(736, 311);
+            this.button3.Location = new System.Drawing.Point(0, 0);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(125, 59);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "BUSCAR";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 18;
             // 
             // button4
             // 
@@ -292,12 +290,34 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(0, 0);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 19;
+            this.button6.Text = "button6";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Location = new System.Drawing.Point(387, 579);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(105, 61);
+            this.button7.TabIndex = 20;
+            this.button7.Text = "MENU";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Endproyect.Properties.Resources.maxresdefault;
             this.ClientSize = new System.Drawing.Size(1083, 669);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -350,6 +370,8 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
     }
 }
 
