@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup4 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup5 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup6 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup7 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup8 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup9 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup10 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
             this.NOMBRE = new System.Windows.Forms.Label();
             this.APELLIDO = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,10 +54,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -165,26 +163,26 @@
             this.columnHeader5,
             this.columnHeader1,
             this.columnHeader6});
-            listViewGroup1.Header = "ListViewGroup";
-            listViewGroup1.Name = "NOMBRE";
-            listViewGroup2.Header = "ListViewGroup";
-            listViewGroup2.Name = "APELLIDO";
-            listViewGroup3.Header = "ListViewGroup";
-            listViewGroup3.Name = "CONTACTO";
-            listViewGroup4.Header = "ListViewGroup";
-            listViewGroup4.Name = "CORREO";
-            listViewGroup5.Header = "ListViewGroup";
-            listViewGroup5.Name = "ESPECIALIDAD";
+            listViewGroup6.Header = "ListViewGroup";
+            listViewGroup6.Name = "NOMBRE";
+            listViewGroup7.Header = "ListViewGroup";
+            listViewGroup7.Name = "APELLIDO";
+            listViewGroup8.Header = "ListViewGroup";
+            listViewGroup8.Name = "CONTACTO";
+            listViewGroup9.Header = "ListViewGroup";
+            listViewGroup9.Name = "CORREO";
+            listViewGroup10.Header = "ListViewGroup";
+            listViewGroup10.Name = "ESPECIALIDAD";
             this.listView1.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup1,
-            listViewGroup2,
-            listViewGroup3,
-            listViewGroup4,
-            listViewGroup5});
+            listViewGroup6,
+            listViewGroup7,
+            listViewGroup8,
+            listViewGroup9,
+            listViewGroup10});
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(12, 174);
+            this.listView1.Location = new System.Drawing.Point(232, 173);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(665, 381);
+            this.listView1.Size = new System.Drawing.Size(711, 381);
             this.listView1.TabIndex = 10;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -234,7 +232,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(232, 579);
+            this.button2.Location = new System.Drawing.Point(256, 579);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(116, 61);
             this.button2.TabIndex = 12;
@@ -246,7 +244,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Felix Titling", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(847, 201);
+            this.label1.Location = new System.Drawing.Point(457, 120);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 24);
             this.label1.TabIndex = 13;
@@ -255,23 +253,16 @@
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(810, 253);
+            this.textBox6.Location = new System.Drawing.Point(515, 124);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(117, 20);
             this.textBox6.TabIndex = 14;
             this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(0, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 18;
-            // 
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Felix Titling", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(925, 311);
+            this.button4.Location = new System.Drawing.Point(925, 579);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(122, 59);
             this.button4.TabIndex = 16;
@@ -282,7 +273,7 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Felix Titling", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(821, 433);
+            this.button5.Location = new System.Drawing.Point(695, 576);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(139, 64);
             this.button5.TabIndex = 17;
@@ -290,19 +281,10 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(0, 0);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 19;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(387, 579);
+            this.button7.Location = new System.Drawing.Point(503, 579);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(105, 61);
             this.button7.TabIndex = 20;
@@ -317,10 +299,8 @@
             this.BackgroundImage = global::Endproyect.Properties.Resources.maxresdefault;
             this.ClientSize = new System.Drawing.Size(1083, 669);
             this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
@@ -337,7 +317,7 @@
             this.Controls.Add(this.APELLIDO);
             this.Controls.Add(this.NOMBRE);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Contactos_Mantenimiento";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -367,10 +347,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
     }
 }

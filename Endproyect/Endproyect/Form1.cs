@@ -57,7 +57,7 @@ namespace Endproyect
             }
         }
 
-        private void GuardarUsuario()
+        private void Registro()
         {
             string connection = "datasource=localhost;port=3306;username=root;password=;database=xray";
             string query = "INSERT INTO empleados(`id`, `apellido`, `nombre`, `correo`, `n_contacto`, `especialidad`) VALUES (NULL, '" + textBox1.Text + "', '" + textBox2.Text + "', '" + textBox3.Text + "' ,'" + textBox4.Text + "' ,'" + textBox5.Text + "')";
@@ -69,7 +69,7 @@ namespace Endproyect
             {
                 conectionDatabase.Open();
                 MySqlDataReader reader1 = databaseCommand.ExecuteReader();
-                MessageBox.Show("GUARDADO CON EXITO");
+                MessageBox.Show("Registro exitoso.");
                 conectionDatabase.Close();
             }
             catch (Exception ex)
@@ -78,7 +78,7 @@ namespace Endproyect
             }
         }
 
-        private void MostrarUsuario()
+        private void BuscarRegistro()
         {
             string connection = "datasource=localhost;port=3306;username=root;password=;database=xray";
             string query = "SELECT * FROM empleados ";
@@ -171,13 +171,13 @@ namespace Endproyect
 
         private void button1_Click(object sender, EventArgs e)
         {
-            GuardarUsuario();
-            MostrarUsuario();
+            Registro();
+            BuscarRegistro();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MostrarUsuario();
+            BuscarRegistro();
         }
 
         private void label1_Click(object sender, EventArgs e)
