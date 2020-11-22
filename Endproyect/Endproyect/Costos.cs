@@ -11,17 +11,17 @@ using MySql.Data.MySqlClient;
 
 namespace Endproyect
 {
-    public partial class Empresas : Form
+    public partial class Costos : Form
     {
-        public Empresas()
+        public Costos()
         {
             InitializeComponent();
         }
 
-        private void Empresas_Load(object sender, EventArgs e)
+        private void Costos_Load(object sender, EventArgs e)
         {
             string connection = "datasource=localhost;port=3306;username=root;password=;database=xray";
-            string query = "SELECT * FROM empresas";
+            string query = "SELECT * FROM costos";
             MySqlConnection conectionDatabase = new MySqlConnection(connection);
             MySqlCommand databaseCommand = new MySqlCommand(query, conectionDatabase);
             databaseCommand.CommandTimeout = 60;
@@ -29,13 +29,13 @@ namespace Endproyect
 
             try
             {
-                conectionDatabase.Open();//abre la coneccion con la DB
+                conectionDatabase.Open();
                 reader = databaseCommand.ExecuteReader();
                 if (reader.Read())
                 {
-                    while (reader.Read())//Coneccion de la base con el listView
+                    while (reader.Read())
                     {
-                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5) };
+                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4) };
                         var listViewItem = new ListViewItem(row);
                         listView1.Items.Add(listViewItem);
                     }
@@ -44,7 +44,7 @@ namespace Endproyect
                 {
                     Console.WriteLine("No se puedo accesar");
                 }
-                conectionDatabase.Close();//Cierra la conexion
+                conectionDatabase.Close();
             }
             catch (Exception ex)
             {
@@ -55,7 +55,7 @@ namespace Endproyect
         private void NuevoRegistro()
         {
             string connection = "datasource=localhost;port=3306;username=root;password=;database=xray";
-            string query = "INSERT INTO empresas (`id`, `nombre`, `nom_titular`, `marca`, `contacto`, `correo`) VALUES (NULL,'" + textBox1.Text + "', '" + textBox3.Text + "', '" + textBox4.Text +"', '" + textBox5.Text+ "', '"+ textBox6.Text+ "')";
+            string query = "INSERT INTO costos (`id`, `precio`, `equipo`, `no_serie`, `estado`) VALUES (NULL,'" + textBox2.Text + "', '" + textBox3.Text + "', '" + textBox4.Text + "', '" + comboBox1.Text + "')";
             MySqlConnection conectionDatabase = new MySqlConnection(connection);
             MySqlCommand databaseCommand = new MySqlCommand(query, conectionDatabase);
             databaseCommand.CommandTimeout = 60;
@@ -64,7 +64,7 @@ namespace Endproyect
             {
                 conectionDatabase.Open();
                 MySqlDataReader reader1 = databaseCommand.ExecuteReader();
-                MessageBox.Show("Cliente agregado.");
+                MessageBox.Show("Costo agregado.");
                 conectionDatabase.Close();
             }
             catch (Exception ex)
@@ -76,7 +76,7 @@ namespace Endproyect
         private void Actualizar()
         {
             string connection = "datasorce=localhost;port=3306;username=root;password=;database=xray";
-            string query = "SELECT * FROM empresas";
+            string query = "SELECT * FROM costos";
             MySqlConnection conectionDatabase = new MySqlConnection(connection);
             MySqlCommand databaseCommand = new MySqlCommand(query, conectionDatabase);
             databaseCommand.CommandTimeout = 60;
@@ -97,11 +97,11 @@ namespace Endproyect
                 }
                 else
                 {
-                    MessageBox.Show("Datos Actualizados");
+                    MessageBox.Show("Listo.");
                 }
                 conectionDatabase.Close();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -110,7 +110,7 @@ namespace Endproyect
         private void Buscar()
         {
             string Connect = "datasorce=localhost;port=3306;username=root;password=;database=xray";
-            string query = "SELECT * FROM xray where id= '" + textBox2.Text + "'";
+            string query = "SELECT * FROM xray where id= '" + textBox1.Text + "'";
             MySqlConnection databaseConnection = new MySqlConnection(Connect);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;
@@ -129,8 +129,7 @@ namespace Endproyect
                         textBox1.Text = row[1];
                         textBox3.Text = row[2];
                         textBox4.Text = row[3];
-                        textBox5.Text = row[4];
-                        textBox6.Text = row[5];
+                        comboBox1.Text = row[4];
                     }
                 }
                 else
@@ -148,7 +147,7 @@ namespace Endproyect
         private void ActualizarRegistro()
         {
             string Connect = "datasorce=localhost;port=3306;username=root;password=;database=xray";
-            string query = "UPDATE `xray` SET `id`='" + textBox2.Text + "',`nombre`='" + textBox1.Text + "',`nom_titular`='" + textBox3.Text + "',`marca`='" + textBox4.Text + "',`contacto`='" + textBox5.Text + "',`correo`='" + textBox6.Text + "'";
+            string query = "UPDATE `xray` SET `id`='" + textBox1.Text + "',`precio`='" + textBox2.Text + "',`equipo`='" + textBox3.Text + "',`no_serie`='" + textBox4.Text + "',`estado`='" + comboBox1.Text + "'";
             MySqlConnection databaseConnection = new MySqlConnection(Connect);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;
@@ -157,14 +156,13 @@ namespace Endproyect
             {
                 databaseConnection.Open();
                 MySqlDataReader myRead = commandDatabase.ExecuteReader();
-                MessageBox.Show("Empresa Actualizada");
+                MessageBox.Show("Costo actualizado.");
                 databaseConnection.Close();
                 textBox1.Text = "";
                 textBox2.Text = "";
                 textBox3.Text = "";
                 textBox4.Text = "";
-                textBox5.Text = "";
-                textBox6.Text = "";
+                comboBox1.Text = "";
             }
             catch (Exception ex)
             {
@@ -175,7 +173,7 @@ namespace Endproyect
         private void Eliminar()
         {
             string Connect = "datasorce=localhost;port=3306;username=root;password=;database=xray";
-            string query = "DELETE FROM xray WHERE id = '"+textBox2.Text+"'";
+            string query = "DELETE FROM xray WHERE id = '" + textBox1.Text + "'";
             MySqlConnection databaseConnection = new MySqlConnection(Connect);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;
@@ -183,14 +181,13 @@ namespace Endproyect
             {
                 databaseConnection.Open();
                 MySqlDataReader myRead = commandDatabase.ExecuteReader();
-                MessageBox.Show("Empresa eliminada.");
+                MessageBox.Show("Costo eliminada.");
                 databaseConnection.Close();
                 textBox1.Text = "";
                 textBox2.Text = "";
                 textBox3.Text = "";
                 textBox4.Text = "";
-                textBox5.Text = "";
-                textBox6.Text = "";
+                comboBox1.Text = "";
             }
             catch (Exception ex)
             {
@@ -198,27 +195,32 @@ namespace Endproyect
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void textBox5_TextChanged(object sender, EventArgs e)
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
@@ -237,23 +239,18 @@ namespace Endproyect
             {
                 MessageBox.Show("No pusiste marca");
             }
-            else if (textBox5.Text == "")
+            else if (comboBox1.Text == "")
             {
                 MessageBox.Show("No pusiste número de contacto");
             }
-            else if (textBox6.Text == "")
-            {
-                MessageBox.Show("No pusiste correo");
-            }
             else
-            {
+            { 
                 NuevoRegistro();
                 Actualizar();
                 textBox1.Text = "";
                 textBox3.Text = "";
                 textBox4.Text = "";
-                textBox5.Text = "";
-                textBox6.Text = "";
+                comboBox1.Text = "";
             }
         }
 
@@ -276,13 +273,9 @@ namespace Endproyect
             {
                 MessageBox.Show("No pusiste marca");
             }
-            else if (textBox5.Text == "")
+            else if (comboBox1.Text == "")
             {
                 MessageBox.Show("No pusiste número de contacto");
-            }
-            else if (textBox6.Text == "")
-            {
-                MessageBox.Show("No pusiste correo");
             }
             else
             {
@@ -292,39 +285,13 @@ namespace Endproyect
                 textBox2.Text = "";
                 textBox3.Text = "";
                 textBox4.Text = "";
-                textBox5.Text = "";
-                textBox6.Text = "";
+                comboBox1.Text = "";
             }
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("¿Esta seguro de eliminar esta empresa?", "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("¿Esta seguro de eliminar esta empresa?", "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 Eliminar();
             }
