@@ -19,10 +19,10 @@ namespace Endproyect
             InitializeComponent();
         }
 
-        private void Registrar()
+        private void INICIO()
         {
             string connect = "datasource=localhost;port=3306;username=root;password=;database=xray";
-            string query = "SELECT from user where username = '" + textBox1.Text + "' AND password = SHA1('" + textBox2.Text + "')";
+            string query = "SELECT from usuarios where username = '" + textBox1.Text + "' AND password = SHA1('" + textBox2.Text + "')";
             MySqlConnection databaseConnection = new MySqlConnection(connect);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;
@@ -70,7 +70,7 @@ namespace Endproyect
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Registrar();
+            INICIO();
             Form4 menu = new Form4();
             menu.Show();
 

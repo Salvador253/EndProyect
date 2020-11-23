@@ -54,3 +54,5 @@ C:\Users\1047483\OneDrive\Documentos\GitHub\EndProyect\Endproyect\Endproyect\obj
 C:\Users\1047483\OneDrive\Documentos\GitHub\EndProyect\Endproyect\Endproyect\obj\Debug\Endproyect.Form3.resources
 C:\Users\Judith Vargas\Documents\GitHub\EndProyect\Endproyect\Endproyect\obj\Debug\Endproyect.Form4.resources
 C:\Users\Judith Vargas\Documents\GitHub\EndProyect\Endproyect\Endproyect\obj\Debug\Endproyect.Form5.resources
+C:\Users\Judith Vargas\Documents\GitHub\EndProyect\Endproyect\Endproyect\obj\Debug\Endproyect.Costos.resources
+C:\Users\Judith Vargas\Documents\GitHub\EndProyect\Endproyect\Endproyect\obj\Debug\Endproyect.Empresas.resources

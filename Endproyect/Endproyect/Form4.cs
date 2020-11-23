@@ -35,7 +35,8 @@ namespace Endproyect
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            Form5 equipos = new Form5();
+            equipos.Show();
         }
 
         private void button7_Click(object sender, EventArgs e)
