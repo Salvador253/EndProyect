@@ -149,5 +149,11 @@
   <ItemGroup>
     <None Include="Resources\zeiss.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rayosx.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagenes-3D-Cuerpo-Humano-Rayos-X.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
