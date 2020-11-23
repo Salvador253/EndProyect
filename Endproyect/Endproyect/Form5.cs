@@ -31,7 +31,7 @@ namespace Endproyect
             {
                 conectionDatabase.Open();
                 reader = databaseCommand.ExecuteReader();
-                if (reader.Read())
+                if (reader.HasRows)
                 {
                     while (reader.Read())
                     {
@@ -40,10 +40,16 @@ namespace Endproyect
                         listView1.Items.Add(listViewItem);
                     }
                 }
-                conectionDatabase.Close();//Cierra la conexion
+                else
+                {
+                    Console.WriteLine("EQUIPO INEXISTENTE");
+
+                }
+                conectionDatabase.Close();
             }
-            catch
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
             }
         }
 
