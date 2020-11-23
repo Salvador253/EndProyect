@@ -53,7 +53,8 @@ namespace Endproyect
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            Costos Costos_Load = new Costos();
+            Costos_Load.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
