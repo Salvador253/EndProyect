@@ -63,6 +63,16 @@ namespace Endproyect.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Imagenes_3D_Cuerpo_Humano_Rayos_X {
+            get {
+                object obj = ResourceManager.GetObject("Imagenes-3D-Cuerpo-Humano-Rayos-X", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap maxresdefault {
             get {
                 object obj = ResourceManager.GetObject("maxresdefault", resourceCulture);
@@ -86,6 +96,16 @@ namespace Endproyect.Properties {
         internal static System.Drawing.Bitmap radiografia_torax_22350_715 {
             get {
                 object obj = ResourceManager.GetObject("radiografia-torax_22350-715", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rayosx {
+            get {
+                object obj = ResourceManager.GetObject("rayosx", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
