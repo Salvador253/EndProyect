@@ -30,7 +30,8 @@ namespace Endproyect
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            Empresas Empresas_Load = new Empresas();
+            Empresas_Load.Show();
         }
 
         private void button5_Click(object sender, EventArgs e)

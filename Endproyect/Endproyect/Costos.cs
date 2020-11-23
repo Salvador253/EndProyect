@@ -297,5 +297,11 @@ namespace Endproyect
             }
             textBox2.Text = "";
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form4 menu = new Form4();
+            menu.Show();
+        }
     }
 }
