@@ -57,6 +57,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // NOMBRE
@@ -180,7 +181,7 @@
             listViewGroup9,
             listViewGroup10});
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(232, 173);
+            this.listView1.Location = new System.Drawing.Point(188, 174);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(711, 381);
             this.listView1.TabIndex = 10;
@@ -292,12 +293,24 @@
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Felix Titling", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(921, 461);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(126, 43);
+            this.button3.TabIndex = 21;
+            this.button3.Text = "BUSCAR";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Endproyect.Properties.Resources.maxresdefault;
             this.ClientSize = new System.Drawing.Size(1083, 669);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -350,6 +363,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button3;
     }
 }
 

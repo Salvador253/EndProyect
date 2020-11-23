@@ -37,7 +37,7 @@ namespace Endproyect
                     while (reader.Read())
                     {
 
-                        
+
                         string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5) };
                         var listViewItem = new ListViewItem(row);
                         listView1.Items.Add(listViewItem);
@@ -95,7 +95,7 @@ namespace Endproyect
                     while (reader.Read())
                     {
 
-                       
+
                         string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5) };
                         var listViewItem = new ListViewItem(row);
                         listView1.Items.Add(listViewItem);
@@ -114,7 +114,98 @@ namespace Endproyect
                 MessageBox.Show(ex.Message);
             }
         }
-            private void NOMBRE_Click(object sender, EventArgs e)
+
+        private void Buscar()
+        {
+            string Connect = "datasorce=localhost;port=3306;username=root;password=;database=xray";
+            string query = "SELECT * FROM xray where id= '" + textBox6.Text + "'";
+            MySqlConnection databaseConnection = new MySqlConnection(Connect);
+            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+            MySqlDataReader reader;
+
+            try
+            {
+                databaseConnection.Open();
+                reader = commandDatabase.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    listView1.Items.Clear();
+                    while (reader.Read())
+                    {
+                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5) };
+                        textBox1.Text = row[1];
+                        textBox3.Text = row[2];
+                        textBox4.Text = row[3];
+                        textBox2.Text = row[4];
+                        textBox5.Text = row[5];
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Registro inexistente.");
+                }
+                databaseConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Modificardato()
+        {
+            string Connect = "datasorce=localhost;port=3306;username=root;password=;database=xray";
+            string query = "UPDATE `empleados` SET `nombre`='" + textBox1.Text + "',`apellido`='" + textBox2.Text + "',`n_contacto`='" + textBox3.Text + "',`correo`='" + textBox4.Text + "',`especialidad`='" + textBox5.Text + "',`id`='" + textBox6.Text +  "'";
+            MySqlConnection databaseConnection = new MySqlConnection(Connect);
+            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+
+
+            try
+            {
+                databaseConnection.Open();
+                MySqlDataReader myRead = commandDatabase.ExecuteReader();
+                MessageBox.Show("DATO ACTIALIZADO");
+                databaseConnection.Close();
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
+                textBox5.Text = "";
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Eliminar()
+        {
+            string Connect = "datasorce=localhost;port=3306;username=root;password=;database=xray";
+            string query = "DELETE FROM empleados WHERE id = '" + textBox6.Text + "'";
+            MySqlConnection databaseConnection = new MySqlConnection(Connect);
+            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+            try
+            {
+                databaseConnection.Open();
+                MySqlDataReader myRead = commandDatabase.ExecuteReader();
+                MessageBox.Show("Costo eliminada.");
+                databaseConnection.Close();
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
+                textBox5.Text = "";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void NOMBRE_Click(object sender, EventArgs e)
         {
 
         }
@@ -190,19 +281,45 @@ namespace Endproyect
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            if (textBox1.Text == "")
+            {
+                MessageBox.Show("No se modifico ningun nombre ");
+            }
+            else if (textBox2.Text == "")
+            {
+                MessageBox.Show("No se modifico apellido");
+            }
+            else if (textBox3.Text == "")
+            {
+                MessageBox.Show("No se modifico contacto");
+            }
+            else if (textBox4.Text == "")
+            {
+                MessageBox.Show("No se modifico correo");
+            }
+            else if (textBox5.Text == "")
+            {
+                MessageBox.Show("No se modifico especialidad");
+            }
+            else
+            {
+                Modificardato();
+                BuscarRegistro();
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
+                textBox5.Text = "";
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            Eliminar();
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -210,6 +327,11 @@ namespace Endproyect
 
             Form4 menu = new Form4();
             menu.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Buscar();
         }
     }
     }
