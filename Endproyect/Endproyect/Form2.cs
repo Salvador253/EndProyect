@@ -83,13 +83,15 @@ namespace Endproyect
             login.Show();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-        }
-
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.linkLabel1.LinkVisited = true;
+            System.Diagnostics.Process.Start("https://sites.google.com/view/x-raycompany/inicio");
         }
     }
 }
