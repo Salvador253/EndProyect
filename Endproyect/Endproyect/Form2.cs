@@ -26,7 +26,7 @@ namespace Endproyect
         private void INICIO()
         {
             string connect = "datasource=localhost;port=3306;username=root;password=;database=xray";
-            string query = "SELECT from usuarios where username = '" + textBox1.Text + "' AND password = ('" + textBox2.Text + "')";
+            string query = "SELECT * FROM usuarios where nombre = '" + textBox1.Text + "' AND password = ('" + textBox2.Text + "')";
             MySqlConnection databaseConnection = new MySqlConnection(connect);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;
@@ -36,14 +36,12 @@ namespace Endproyect
             {
                 databaseConnection.Open();
                 reader = commandDatabase.ExecuteReader();
-                databaseConnection.Close();
                 textBox1.Text = "";
                 textBox2.Text = "";
 
                 if (reader.Read())
                 {
                     MessageBox.Show("Bienvenido.");
-                    databaseConnection.Close();
                     Form4 menu = new Form4();
                     menu.Show();
                 }
@@ -51,7 +49,7 @@ namespace Endproyect
                 {
                     label3.Visible = true;
                 }
-
+                databaseConnection.Close();
             }
             catch(Exception ex)
             {
