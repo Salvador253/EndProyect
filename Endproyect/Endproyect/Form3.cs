@@ -64,6 +64,7 @@ namespace Endproyect
 
         private void button2_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Form2 INICIO = new Form2();
             INICIO.Show();
         }

@@ -42,6 +42,7 @@ namespace Endproyect
                 if (reader.Read())
                 {
                     MessageBox.Show("Bienvenido.");
+                    this.Hide();
                     Form4 menu = new Form4();
                     menu.Show();
                 }
@@ -79,6 +80,7 @@ namespace Endproyect
 
         private void button1_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Form3 login = new Form3();
             login.Show();
         }

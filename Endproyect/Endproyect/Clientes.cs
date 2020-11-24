@@ -261,6 +261,7 @@ namespace Endproyect
 
         private void button5_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Form4 menu = new Form4();
             menu.Show();
         }
