@@ -18,7 +18,103 @@ namespace Endproyect
             InitializeComponent();
         }
 
-        private void equipos(object sender, EventArgs e)
+        private void Buscar()
+        {
+            string Connect = "datasource=localhost;port=3306;username=root;password=;database=xray";
+            string query = "SELECT * FROM equipos where id5 = '" + textBox1.Text + "'";
+            MySqlConnection databaseConnection = new MySqlConnection(Connect);
+            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+            MySqlDataReader reader;
+
+            try
+            {
+                databaseConnection.Open();
+                reader = commandDatabase.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    listView1.Items.Clear();
+                    while (reader.Read())
+                    {
+                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5) };
+                        textBox1.Text = row[0];
+                        textBox2.Text = row[1];
+                        textBox3.Text = row[2];
+                        textBox4.Text = row[3];
+                        textBox5.Text = row[4];
+                        textBox6.Text = row[5];
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("equipo inexistente inexistente.");
+                }
+                databaseConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Actualizar()
+        {
+            string connection = "datasource=localhost;port=3306;username=root;password=;database=xray";
+            string query = "SELECT * FROM equipos where id5 = '"+ textBox1.Text +"'";
+            MySqlConnection conectionDatabase = new MySqlConnection(connection);
+            MySqlCommand databaseCommand = new MySqlCommand(query, conectionDatabase);
+            databaseCommand.CommandTimeout = 60;
+            MySqlDataReader reader;
+
+            try
+            {
+                conectionDatabase.Open();
+                reader = databaseCommand.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5) };
+                        var listViewItem = new ListViewItem(row);
+                        listView1.Items.Add(listViewItem);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("EQUIPO INEXISTENTE");
+
+                }
+                conectionDatabase.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form4 menu = new Form4();
+            menu.Show();
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Buscar();
+            Actualizar();
+        }
+
+        private void Form5_Load(object sender, EventArgs e)
         {
             string connection = "datasource=localhost;port=3306;username=root;password=;database=xray";
             string query = "SELECT * FROM equipos";
@@ -53,62 +149,29 @@ namespace Endproyect
             }
         }
 
-        private void Buscar()
-        {
-            string Connect = "datasorce=localhost;port=3306;username=root;password=;database=xray";
-            string query = "SELECT * FROM equipos where id5= '" + textBox4.Text + "'";
-            MySqlConnection databaseConnection = new MySqlConnection(Connect);
-            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
-            commandDatabase.CommandTimeout = 60;
-            MySqlDataReader reader;
-
-            try
-            {
-                databaseConnection.Open();
-                reader = commandDatabase.ExecuteReader();
-                if (reader.HasRows)
-                {
-                    listView1.Items.Clear();
-                    while (reader.Read())
-                    {
-                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5) };
-                        textBox1.Text = row[1];
-                        textBox2.Text = row[2];
-                        textBox3.Text = row[3];
-                        textBox4.Text = row[4];
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("equipo inexistente inexistente.");
-                }
-                databaseConnection.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        private void textBox5_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form4 menu = new Form4();
-            menu.Show();
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
+        private void textBox6_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            Buscar();
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
