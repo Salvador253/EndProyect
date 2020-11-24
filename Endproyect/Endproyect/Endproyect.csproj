@@ -155,5 +155,8 @@
   <ItemGroup>
     <None Include="Resources\Imagenes-3D-Cuerpo-Humano-Rayos-X.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo3.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

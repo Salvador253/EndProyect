@@ -42,12 +42,14 @@ namespace Endproyect
 
                 if (reader.Read())
                 {
-                    MessageBox.Show("REGISTRO EXITOSO");
+                    MessageBox.Show("Bienvenido.");
                     databaseConnection.Close();
+                    Form4 menu = new Form4();
+                    menu.Show();
                 }
                 else
                 {
-                    MessageBox.Show("REGISTRO FALLIDO");
+                    label3.Visible = true;
                 }
 
             }
@@ -75,9 +77,6 @@ namespace Endproyect
         private void button2_Click(object sender, EventArgs e)
         {
             INICIO();
-            Form4 menu = new Form4();
-            menu.Show();
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -88,6 +87,11 @@ namespace Endproyect
 
         private void button3_Click(object sender, EventArgs e)
         {
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
