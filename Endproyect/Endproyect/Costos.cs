@@ -76,7 +76,7 @@ namespace Endproyect
 
         private void Actualizar()
         {
-            string connection = "datasorce=localhost;port=3306;username=root;password=;database=xray";
+            string connection = "datasource=localhost;port=3306;username=root;password=;database=xray";
             string query = "SELECT * FROM costos";
             MySqlConnection conectionDatabase = new MySqlConnection(connection);
             MySqlCommand databaseCommand = new MySqlCommand(query, conectionDatabase);
@@ -110,8 +110,8 @@ namespace Endproyect
 
         private void Buscar()
         {
-            string Connect = "datasorce=localhost;port=3306;username=root;password=;database=xray";
-            string query = "SELECT * FROM xray where id2= '" + textBox1.Text + "'";
+            string Connect = "datasource=localhost;port=3306;username=root;password=;database=xray";
+            string query = "SELECT * FROM costos where id2= '" + textBox1.Text + "'";
             MySqlConnection databaseConnection = new MySqlConnection(Connect);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;
@@ -147,8 +147,8 @@ namespace Endproyect
 
         private void ActualizarRegistro()
         {
-            string Connect = "datasorce=localhost;port=3306;username=root;password=;database=xray";
-            string query = "UPDATE `xray` SET `id2`='" + textBox1.Text + "',`precio`='" + textBox2.Text + "',`equipo`='" + textBox3.Text + "',`no_serie`='" + textBox4.Text + "',`estado`='" + comboBox1.Text + "'";
+            string Connect = "datasource=localhost;port=3306;username=root;password=;database=xray";
+            string query = "UPDATE `costos` SET `id2`='" + textBox1.Text + "',`precio`='" + textBox2.Text + "',`equipo`='" + textBox3.Text + "',`no_serie`='" + textBox4.Text + "',`estado`='" + comboBox1.Text + "'";
             MySqlConnection databaseConnection = new MySqlConnection(Connect);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;
@@ -173,8 +173,8 @@ namespace Endproyect
 
         private void Eliminar()
         {
-            string Connect = "datasorce=localhost;port=3306;username=root;password=;database=xray";
-            string query = "DELETE FROM xray WHERE id2 = '" + textBox1.Text + "'";
+            string Connect = "datasource=localhost;port=3306;username=root;password=;database=xray";
+            string query = "DELETE FROM costos WHERE id2 = '" + textBox1.Text + "'";
             MySqlConnection databaseConnection = new MySqlConnection(Connect);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;

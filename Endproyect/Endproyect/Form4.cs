@@ -48,7 +48,8 @@ namespace Endproyect
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Clientes Clientes_Load = new Clientes();
+            Clientes_Load.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)

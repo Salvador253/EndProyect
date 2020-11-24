@@ -25,7 +25,7 @@ namespace Endproyect
 
         private void Clientes_Load(object sender, EventArgs e)
         {
-            string connection = "datasorces=localhost;port=3306;username=root;password=;database=xray";
+            string connection = "datasource=localhost;port=3306;username=root;password=;database=xray";
             string query = "SELECT * FROM clientes";
             MySqlConnection conectionDatabase = new MySqlConnection(connection);
             MySqlCommand databaseCommand = new MySqlCommand(query, conectionDatabase);
@@ -40,25 +40,25 @@ namespace Endproyect
                 {
                     while (reader.Read())
                     {
-                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6) };
+                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4) };
                         var listViewItem = new ListViewItem(row);
                         listView1.Items.Add(listViewItem);
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Sin accseso");
+                    Console.WriteLine("No se puedo accesar");
                 }
                 conectionDatabase.Close();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
         private void actualizardatos()
         {
-            string Connect = "datasorce=localhost;port=3306;username=root;password=;database=xray";
+            string Connect = "datasource=localhost;port=3306;username=root;password=;database=xray";
             string query = "UPDATE `clientes` SET `id1`='" + textBox1.Text + "',`nombrehe`='" + textBox3.Text + "',`encargado`='" + textBox2.Text + "',`equipo`='" + textBox4.Text + "',`no_serie` ='" + textBox5.Text + "',`marca` = '" + textBox6.Text + "', `modelo`='" + textBox7.Text + "'";
             MySqlConnection databaseConnection = new MySqlConnection(Connect);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
@@ -88,7 +88,7 @@ namespace Endproyect
         }
         private void Buscardatos()
         {
-            string Connect = "datasorce=localhost;port=3306;username=root;password=;database=xray";
+            string Connect = "datasource=localhost;port=3306;username=root;password=;database=xray";
             string query = "SELECT * FROM clientes where id1= '" + textBox1.Text + "'";
             MySqlConnection databaseConnection = new MySqlConnection(Connect);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
@@ -128,7 +128,7 @@ namespace Endproyect
 
         private void borrardatos()
         {
-            string Connect = "datasorce=localhost;port=3306;username=root;password=;database=xray";
+            string Connect = "datasource=localhost;port=3306;username=root;password=;database=xray";
             string query = "DELETE FROM clientes WHERE id1 = '" + textBox1.Text + "'";
             MySqlConnection databaseConnection = new MySqlConnection(Connect);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
@@ -157,7 +157,7 @@ namespace Endproyect
         }
         private void registrarcliente()
         {
-            string Connect = "datasorce=localhost;port=3306;username=root;password=;database=xray";
+            string Connect = "datasource=localhost;port=3306;username=root;password=;database=xray";
             string query = "INSERT INTO nombre(`id1`, `nombrehe`,`encargado`, `equipo`, `no_serie`,`marca`,`modelo`) VALUES( NULL, '" + textBox1.Text + "', '" + textBox3.Text + "', '" + textBox2.Text + "', '" + textBox4.Text + "', '" + textBox5.Text + "', '" + textBox6.Text + "', '" + textBox7.Text + "')";
             MySqlConnection databaseConnection = new MySqlConnection(Connect);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
@@ -257,6 +257,12 @@ namespace Endproyect
         private void button3_Click(object sender, EventArgs e)
         {
             borrardatos();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form4 menu = new Form4();
+            menu.Show();
         }
     }
 }
