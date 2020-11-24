@@ -61,7 +61,7 @@ namespace Endproyect
         private void Registro()
         {
             string connection = "datasource=localhost;port=3306;username=root;password=;database=xray";
-            string query = "INSERT INTO empleados(`id`, `apellido`, `nombre`, `correo`, `n_contacto`, `especialidad`) VALUES (NULL, '" + textBox1.Text + "', '" + textBox2.Text + "', '" + textBox3.Text + "' ,'" + textBox4.Text + "' ,'" + textBox5.Text + "')";
+            string query = "INSERT INTO empleados(`id3`, `apellido`, `nombre`, `correo`, `n_contacto`, `especialidad`) VALUES (NULL, '" + textBox1.Text + "', '" + textBox2.Text + "', '" + textBox3.Text + "' ,'" + textBox4.Text + "' ,'" + textBox5.Text + "')";
             MySqlConnection conectionDatabase = new MySqlConnection(connection);
             MySqlCommand databaseCommand = new MySqlCommand(query, conectionDatabase);
             databaseCommand.CommandTimeout = 60;
@@ -119,7 +119,7 @@ namespace Endproyect
         private void Buscar()
         {
             string Connect = "datasorce=localhost;port=3306;username=root;password=;database=xray";
-            string query = "SELECT * FROM xray where id= '" + textBox6.Text + "'";
+            string query = "SELECT * FROM xray where id3= '" + textBox6.Text + "'";
             MySqlConnection databaseConnection = new MySqlConnection(Connect);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;
@@ -157,7 +157,7 @@ namespace Endproyect
         private void Modificardato()
         {
             string Connect = "datasorce=localhost;port=3306;username=root;password=;database=xray";
-            string query = "UPDATE `empleados` SET `nombre`='" + textBox1.Text + "',`apellido`='" + textBox2.Text + "',`n_contacto`='" + textBox3.Text + "',`correo`='" + textBox4.Text + "',`especialidad`='" + textBox5.Text + "',`id`='" + textBox6.Text +  "'";
+            string query = "UPDATE `empleados` SET `nombre`='" + textBox1.Text + "',`apellido`='" + textBox2.Text + "',`n_contacto`='" + textBox3.Text + "',`correo`='" + textBox4.Text + "',`especialidad`='" + textBox5.Text + "',`id3`='" + textBox6.Text +  "'";
             MySqlConnection databaseConnection = new MySqlConnection(Connect);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;
@@ -185,7 +185,7 @@ namespace Endproyect
         private void Eliminar()
         {
             string Connect = "datasorce=localhost;port=3306;username=root;password=;database=xray";
-            string query = "DELETE FROM empleados WHERE id = '" + textBox6.Text + "'";
+            string query = "DELETE FROM empleados WHERE id3 = '" + textBox6.Text + "'";
             MySqlConnection databaseConnection = new MySqlConnection(Connect);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;
