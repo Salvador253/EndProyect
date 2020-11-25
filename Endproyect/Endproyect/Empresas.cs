@@ -145,6 +145,40 @@ namespace Endproyect
             }
         }
 
+        private void Actualizarlist()
+        {
+            string connection = "datasource=localhost;port=3306;username=root;password=;database=xray";
+            string query = "SELECT * FROM empresas where id4 = '" + textBox2.Text + "'";
+            MySqlConnection conectionDatabase = new MySqlConnection(connection);
+            MySqlCommand databaseCommand = new MySqlCommand(query, conectionDatabase);
+            databaseCommand.CommandTimeout = 60;
+            MySqlDataReader reader;
+
+            try
+            {
+                conectionDatabase.Open();
+                reader = databaseCommand.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5) };
+                        var listViewItem = new ListViewItem(row);
+                        listView1.Items.Add(listViewItem);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("EQUIPO INEXISTENTE");
+
+                }
+                conectionDatabase.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void ActualizarRegistro()
         {
             string Connect = "datasource=localhost;port=3306;username=root;password=;database=xray";
@@ -260,6 +294,7 @@ namespace Endproyect
         private void button2_Click(object sender, EventArgs e)
         {
             Buscar();
+            Actualizarlist();
         }
 
         private void button3_Click(object sender, EventArgs e)

@@ -48,5 +48,26 @@ namespace Endproyect
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Clientes cliente = new Clientes();
+            cliente.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Costos costo = new Costos();
+            costo.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 empleados = new Form1();
+            empleados.Show();
+        }
     }
 }

@@ -53,12 +53,12 @@ namespace Endproyect
                         {
                             MessageBox.Show("Bienvenido "+nombre);
                             
-                            Diseñador menu1 = new Diseñador();
+                            menu_admins menu1 = new menu_admins();
                             menu1.Show();
                         }
                         else
                         {
-                            MessageBox.Show("Bienvenido."+nombre);
+                            MessageBox.Show("Sea bienvenido "+nombre);
                             Form4 menu2 = new Form4();
                             menu2.Show();
                         }

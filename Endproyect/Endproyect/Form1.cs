@@ -44,7 +44,7 @@ namespace Endproyect
                 }
                 else
                 {
-                    Console.WriteLine("No hay datos existentes");
+                    MessageBox.Show("Sin conexion");
                 }
                 conectionDatabase.Close();
 
@@ -55,10 +55,10 @@ namespace Endproyect
             }
         }
 
-        private void GuardarUsuario()
+        private void RegistroEmpleado()
         {
             string connection = "datasource=localhost;port=3306;username=root;password=;database=xray";
-            string query = "INSERT INTO empleados(`id3`, `nombre`, `apellido`, `n_contacto`, 'correo', 'especialidad') VALUES (NULL, '" + textBox1.Text + "', '" + textBox2.Text + "', '" + textBox3.Text + "', '" + textBox5.Text + "', '" + textBox6.Text + "')";
+            string query = "INSERT INTO empleados(`id3`, `nombre`, `apellido`, `n_contacto`, `correo`, `especialidad`) VALUES (NULL, '" + textBox1.Text + "', '" + textBox2.Text + "', '" + textBox3.Text + "', '" + textBox5.Text + "', '" + textBox6.Text + "')";
             MySqlConnection conectionDatabase = new MySqlConnection(connection);
             MySqlCommand databaseCommand = new MySqlCommand(query, conectionDatabase);
             databaseCommand.CommandTimeout = 60;
@@ -67,7 +67,7 @@ namespace Endproyect
             {
                 conectionDatabase.Open();
                 MySqlDataReader reader1 = databaseCommand.ExecuteReader();
-                MessageBox.Show("Lograste Guardar el dato");
+                MessageBox.Show("Nuevo empleado agregado correctamente.");
                 conectionDatabase.Close();
             }
             catch (Exception ex)
@@ -162,7 +162,7 @@ namespace Endproyect
             }
         }
 
-        private void MostrarUsuario()
+        private void Actualizar()
         {
             string Connect = "datasource=localhost;port=3306;username=root;password=;database=xray;";
             string query = "SELECT * FROM empleados";
@@ -254,12 +254,72 @@ namespace Endproyect
 
         private void button1_Click(object sender, EventArgs e)
         {
-            GuardarUsuario();
+            if (textBox1.Text == "")
+            {
+                MessageBox.Show("No se modifico ningun nombre ");
+            }
+            else if (textBox2.Text == "")
+            {
+                MessageBox.Show("No se modifico apellido");
+            }
+            else if (textBox3.Text == "")
+            {
+                MessageBox.Show("No se modifico contacto");
+            }
+            else if (textBox5.Text == "")
+            {
+                MessageBox.Show("No se modifico correo");
+            }
+            else if (textBox6.Text == "")
+            {
+                MessageBox.Show("No se modifico especialidad");
+            }
+            else
+            {
+                RegistroEmpleado();
+                Actualizar();
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
+                textBox5.Text = "";
+                textBox6.Text = "";
+            }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Actualizarlist()
         {
-            MostrarUsuario();
+            string connection = "datasource=localhost;port=3306;username=root;password=;database=xray";
+            string query = "SELECT * FROM empleados where id3 = '" + textBox4.Text + "'";
+            MySqlConnection conectionDatabase = new MySqlConnection(connection);
+            MySqlCommand databaseCommand = new MySqlCommand(query, conectionDatabase);
+            databaseCommand.CommandTimeout = 60;
+            MySqlDataReader reader;
+
+            try
+            {
+                conectionDatabase.Open();
+                reader = databaseCommand.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5) };
+                        var listViewItem = new ListViewItem(row);
+                        listView1.Items.Add(listViewItem);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("EQUIPO INEXISTENTE");
+
+                }
+                conectionDatabase.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -271,8 +331,6 @@ namespace Endproyect
         {
 
         }
-
-       
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -292,26 +350,35 @@ namespace Endproyect
             {
                 MessageBox.Show("No se modifico correo");
             }
-            else if (textBox5.Text == "")
+            else if (textBox6.Text == "")
             {
                 MessageBox.Show("No se modifico especialidad");
             }
             else
             {
                 modificar();
-                MostrarUsuario();
-
+                Actualizar();
                 textBox1.Text = "";
                 textBox2.Text = "";
                 textBox3.Text = "";
                 textBox4.Text = "";
                 textBox5.Text = "";
+                textBox6.Text = "";
             }
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            borrar();
+            if (MessageBox.Show("¿Esta seguro de eliminar esta empresa?", "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                borrar();
+            }
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
+            textBox5.Text = "";
+            textBox6.Text = "";
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -324,6 +391,12 @@ namespace Endproyect
         private void button3_Click(object sender, EventArgs e)
         {
             buscar();
+            Actualizarlist();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Actualizar();
         }
     }
     }

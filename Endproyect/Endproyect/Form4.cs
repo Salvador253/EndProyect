@@ -46,24 +46,5 @@ namespace Endproyect
             Form2 Registrar = new Form2();
             Registrar.Show();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Clientes_2 Clientes_2_Load = new Clientes_2();
-            Clientes_2_Load.Show();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Empleados Empleados_Load = new Empleados();
-            Empleados_Load.Show();
-        }
     }
 }
