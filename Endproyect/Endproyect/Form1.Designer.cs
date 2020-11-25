@@ -36,19 +36,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.NOMBRE = new System.Windows.Forms.Label();
             this.APELLIDO = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button1 = new System.Windows.Forms.Button();
@@ -83,22 +80,11 @@
             this.APELLIDO.Text = "APELLIDO";
             this.APELLIDO.Click += new System.EventHandler(this.APELLIDO_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(525, 19);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(145, 18);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "N° DE CONTACTO";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(392, 124);
+            this.label3.Location = new System.Drawing.Point(573, 19);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(74, 18);
             this.label3.TabIndex = 3;
@@ -132,25 +118,17 @@
             this.textBox2.TabIndex = 6;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(503, 65);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(221, 20);
-            this.textBox3.TabIndex = 7;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
-            // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(772, 65);
+            this.textBox4.Location = new System.Drawing.Point(502, 128);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(111, 20);
+            this.textBox4.Size = new System.Drawing.Size(178, 20);
             this.textBox4.TabIndex = 8;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(503, 124);
+            this.textBox5.Location = new System.Drawing.Point(502, 65);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(209, 20);
             this.textBox5.TabIndex = 9;
@@ -159,10 +137,9 @@
             // listView1
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader2,
+            this.columnHeader5,
             this.columnHeader3,
             this.columnHeader4,
-            this.columnHeader5,
             this.columnHeader1,
             this.columnHeader6});
             this.listView1.Font = new System.Drawing.Font("Maiandra GD", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -185,31 +162,29 @@
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(22, 174);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(711, 381);
+            this.listView1.Size = new System.Drawing.Size(625, 381);
             this.listView1.TabIndex = 10;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
-            // columnHeader2
+            // columnHeader5
             // 
-            this.columnHeader2.Text = "ID";
-            this.columnHeader2.Width = 83;
+            this.columnHeader5.DisplayIndex = 2;
+            this.columnHeader5.Text = "CONTACTO";
+            this.columnHeader5.Width = 109;
             // 
             // columnHeader3
             // 
+            this.columnHeader3.DisplayIndex = 0;
             this.columnHeader3.Text = "NOMBRE";
             this.columnHeader3.Width = 108;
             // 
             // columnHeader4
             // 
+            this.columnHeader4.DisplayIndex = 1;
             this.columnHeader4.Text = "APELLIDO";
             this.columnHeader4.Width = 114;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "CONTACTO";
-            this.columnHeader5.Width = 109;
             // 
             // columnHeader1
             // 
@@ -224,7 +199,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(772, 247);
+            this.button1.Location = new System.Drawing.Point(709, 247);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(122, 61);
             this.button1.TabIndex = 11;
@@ -236,11 +211,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(814, 19);
+            this.label1.Location = new System.Drawing.Point(386, 127);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(25, 18);
+            this.label1.Size = new System.Drawing.Size(96, 18);
             this.label1.TabIndex = 13;
-            this.label1.Text = "ID";
+            this.label1.Text = "CONTACTO";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBox6
@@ -254,7 +229,7 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(772, 328);
+            this.button4.Location = new System.Drawing.Point(709, 328);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(122, 59);
             this.button4.TabIndex = 16;
@@ -265,7 +240,7 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(772, 408);
+            this.button5.Location = new System.Drawing.Point(709, 408);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(122, 64);
             this.button5.TabIndex = 17;
@@ -276,7 +251,7 @@
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(772, 494);
+            this.button7.Location = new System.Drawing.Point(709, 494);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(122, 61);
             this.button7.TabIndex = 20;
@@ -287,7 +262,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(772, 174);
+            this.button3.Location = new System.Drawing.Point(709, 174);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(122, 43);
             this.button3.TabIndex = 21;
@@ -299,7 +274,7 @@
             // 
             this.button2.BackgroundImage = global::Endproyect.Properties.Resources._81501;
             this.button2.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(772, 113);
+            this.button2.Location = new System.Drawing.Point(709, 113);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(122, 43);
             this.button2.TabIndex = 22;
@@ -312,7 +287,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Endproyect.Properties.Resources.maxresdefault;
-            this.ClientSize = new System.Drawing.Size(928, 576);
+            this.ClientSize = new System.Drawing.Size(858, 576);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button7);
@@ -324,12 +299,10 @@
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.APELLIDO);
             this.Controls.Add(this.NOMBRE);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -345,17 +318,14 @@
 
         private System.Windows.Forms.Label NOMBRE;
         private System.Windows.Forms.Label APELLIDO;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;

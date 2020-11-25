@@ -41,6 +41,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // listView1
@@ -51,12 +52,13 @@
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5,
-            this.columnHeader6});
+            this.columnHeader6,
+            this.columnHeader7});
             this.listView1.Font = new System.Drawing.Font("Maiandra GD", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(12, 38);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(638, 281);
+            this.listView1.Size = new System.Drawing.Size(739, 281);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -69,33 +71,33 @@
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "EQUIPO";
+            this.columnHeader2.Text = "NO_SERIE";
             this.columnHeader2.Width = 150;
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "MARCA";
+            this.columnHeader3.Text = "EQUIPO";
             this.columnHeader3.Width = 100;
             // 
             // columnHeader4
             // 
-            this.columnHeader4.Text = "MODELO";
+            this.columnHeader4.Text = "ID_EMPRESA";
             this.columnHeader4.Width = 100;
             // 
             // columnHeader5
             // 
-            this.columnHeader5.Text = "ESTADO";
+            this.columnHeader5.Text = "NOMBRE";
             this.columnHeader5.Width = 150;
             // 
             // columnHeader6
             // 
-            this.columnHeader6.Text = "TIPO";
+            this.columnHeader6.Text = "PRECIO";
             this.columnHeader6.Width = 100;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(519, 358);
+            this.button1.Location = new System.Drawing.Point(629, 358);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(122, 40);
             this.button1.TabIndex = 1;
@@ -143,12 +145,16 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "ID";
             // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "CLIENTE";
+            // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Endproyect.Properties.Resources.zeiss;
-            this.ClientSize = new System.Drawing.Size(662, 412);
+            this.ClientSize = new System.Drawing.Size(768, 412);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox1);
@@ -178,5 +184,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
     }
 }

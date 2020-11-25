@@ -78,8 +78,8 @@
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "ID";
-            this.columnHeader1.Width = 40;
+            this.columnHeader1.Text = "No_serie";
+            this.columnHeader1.Width = 80;
             // 
             // columnHeader2
             // 

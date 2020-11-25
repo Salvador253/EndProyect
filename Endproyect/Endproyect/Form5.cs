@@ -21,7 +21,7 @@ namespace Endproyect
         private void Buscar()
         {
             string Connect = "datasource=localhost;port=3306;username=root;password=;database=xray";
-            string query = "SELECT * FROM equipos where id5 = '" + textBox1.Text + "'";
+            string query = "SELECT * FROM catalogo where id_catalogo = '" + textBox1.Text + "'";
             MySqlConnection databaseConnection = new MySqlConnection(Connect);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;
@@ -36,18 +36,13 @@ namespace Endproyect
                     listView1.Items.Clear();
                     while (reader.Read())
                     {
-                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5) };
+                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6) };
                         textBox1.Text = row[0];
-                        textBox2.Text = row[1];
-                        textBox3.Text = row[2];
-                        textBox4.Text = row[3];
-                        textBox5.Text = row[4];
-                        textBox6.Text = row[5];
                     }
                 }
                 else
                 {
-                    MessageBox.Show("equipo inexistente inexistente.");
+                    MessageBox.Show("Equipo inexistente inexistente.");
                 }
                 databaseConnection.Close();
             }
@@ -60,7 +55,7 @@ namespace Endproyect
         private void Actualizar()
         {
             string connection = "datasource=localhost;port=3306;username=root;password=;database=xray";
-            string query = "SELECT * FROM equipos where id5 = '"+ textBox1.Text +"'";
+            string query = "SELECT * FROM catalogo where id_catalogo = '"+ textBox1.Text +"'";
             MySqlConnection conectionDatabase = new MySqlConnection(connection);
             MySqlCommand databaseCommand = new MySqlCommand(query, conectionDatabase);
             databaseCommand.CommandTimeout = 60;
@@ -74,7 +69,7 @@ namespace Endproyect
                 {
                     while (reader.Read())
                     {
-                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5) };
+                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6) };
                         var listViewItem = new ListViewItem(row);
                         listView1.Items.Add(listViewItem);
                     }
@@ -118,7 +113,7 @@ namespace Endproyect
         private void Form5_Load(object sender, EventArgs e)
         {
             string connection = "datasource=localhost;port=3306;username=root;password=;database=xray";
-            string query = "SELECT * FROM equipos";
+            string query = "SELECT * FROM catalogo";
             MySqlConnection conectionDatabase = new MySqlConnection(connection);
             MySqlCommand databaseCommand = new MySqlCommand(query, conectionDatabase);
             databaseCommand.CommandTimeout = 60;
@@ -132,7 +127,7 @@ namespace Endproyect
                 {
                     while (reader.Read())
                     {
-                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5) };
+                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6) };
                         var listViewItem = new ListViewItem(row);
                         listView1.Items.Add(listViewItem);
                     }

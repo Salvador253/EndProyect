@@ -36,7 +36,7 @@ namespace Endproyect
                 {
                     while (reader.Read())
                     {
-                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5) };
+                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4) };
                         var listViewItem = new ListViewItem(row);
                         listView1.Items.Add(listViewItem);
 
@@ -58,7 +58,7 @@ namespace Endproyect
         private void RegistroEmpleado()
         {
             string connection = "datasource=localhost;port=3306;username=root;password=;database=xray";
-            string query = "INSERT INTO empleados(`id3`, `nombre`, `apellido`, `n_contacto`, `correo`, `especialidad`) VALUES (NULL, '" + textBox1.Text + "', '" + textBox2.Text + "', '" + textBox3.Text + "', '" + textBox5.Text + "', '" + textBox6.Text + "')";
+            string query = "INSERT INTO empleados(`n_contacto`, `nombre_em`, `apellido`, `correo`, `especialidad`) VALUES ('"+ textBox4.Text+"', '" + textBox1.Text + "', '" + textBox2.Text + "', '" + textBox5.Text + "', '" + textBox6.Text + "')";
             MySqlConnection conectionDatabase = new MySqlConnection(connection);
             MySqlCommand databaseCommand = new MySqlCommand(query, conectionDatabase);
             databaseCommand.CommandTimeout = 60;
@@ -79,7 +79,7 @@ namespace Endproyect
         private void borrar()
         {
             string connection = "datasource=localhost;port=3306;username=root;password=;database=xray";
-            string query = "DELETE FROM empleados WHERE id3='" + textBox4.Text + "' ";
+            string query = "DELETE FROM empleados WHERE n_contacto='" + textBox4.Text + "' ";
             MySqlConnection conectionDatabase = new MySqlConnection(connection);
             MySqlCommand databaseCommand = new MySqlCommand(query, conectionDatabase);
             databaseCommand.CommandTimeout = 60;
@@ -102,7 +102,7 @@ namespace Endproyect
         private void modificar()
         {
             string connection = "datasource=localhost;port=3306;username=root;password=;database=xray";
-            string query = "UPDATE empleados SET nombre='" + textBox1.Text + "',apellido='" + textBox2.Text + "',n_contacto='" + textBox3.Text + "',correo='" + textBox5.Text + "',especialidad='" + textBox6.Text + "' WHERE id3='" + textBox4.Text + "' ";
+            string query = "UPDATE empleados SET nombre_em='" + textBox1.Text + "',apellido='" + textBox2.Text + "', correo='" + textBox5.Text + "',especialidad='" + textBox6.Text + "' WHERE n_contacto='"+ textBox4.Text + "' ";
             MySqlConnection conectionDatabase = new MySqlConnection(connection);
             MySqlCommand databaseCommand = new MySqlCommand(query, conectionDatabase);
             databaseCommand.CommandTimeout = 60;
@@ -124,7 +124,7 @@ namespace Endproyect
         private void buscar()
         {
             string Connect = "datasource=localhost;port=3306;username=root;password=;database=xray;";
-            string query = "SELECT * FROM empleados where id3='" + textBox4.Text + "' ";
+            string query = "SELECT * FROM empleados where n_contacto='" + textBox4.Text + "' ";
             MySqlConnection databaseConnection = new MySqlConnection(Connect);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;
@@ -140,11 +140,10 @@ namespace Endproyect
                     listView1.Items.Clear();
                     while (reader.Read())
                     {
-                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5) };
+                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4) };
                        
                         textBox1.Text = row[1];
                         textBox2.Text = row[2];
-                        textBox3.Text = row[3];
                         textBox5.Text = row[4];
                         textBox6.Text = row[5];
                     }
@@ -180,7 +179,7 @@ namespace Endproyect
                     listView1.Items.Clear();
                     while (reader.Read())
                     {
-                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5) };
+                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4) };
                         var ListViewItems = new ListViewItem(row);
                         listView1.Items.Add(ListViewItems);
                     }
@@ -262,10 +261,6 @@ namespace Endproyect
             {
                 MessageBox.Show("No se modifico apellido");
             }
-            else if (textBox3.Text == "")
-            {
-                MessageBox.Show("No se modifico contacto");
-            }
             else if (textBox5.Text == "")
             {
                 MessageBox.Show("No se modifico correo");
@@ -280,7 +275,6 @@ namespace Endproyect
                 Actualizar();
                 textBox1.Text = "";
                 textBox2.Text = "";
-                textBox3.Text = "";
                 textBox4.Text = "";
                 textBox5.Text = "";
                 textBox6.Text = "";
@@ -290,7 +284,7 @@ namespace Endproyect
         private void Actualizarlist()
         {
             string connection = "datasource=localhost;port=3306;username=root;password=;database=xray";
-            string query = "SELECT * FROM empleados where id3 = '" + textBox4.Text + "'";
+            string query = "SELECT * FROM empleados where n_contacto = '" + textBox4.Text + "'";
             MySqlConnection conectionDatabase = new MySqlConnection(connection);
             MySqlCommand databaseCommand = new MySqlCommand(query, conectionDatabase);
             databaseCommand.CommandTimeout = 60;
@@ -304,7 +298,7 @@ namespace Endproyect
                 {
                     while (reader.Read())
                     {
-                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5) };
+                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4) };
                         var listViewItem = new ListViewItem(row);
                         listView1.Items.Add(listViewItem);
                     }
@@ -341,11 +335,7 @@ namespace Endproyect
             {
                 MessageBox.Show("No se modifico apellido");
             }
-            else if (textBox3.Text == "")
-            {
-                MessageBox.Show("No se modifico contacto");
-            }
-            else if (textBox4.Text == "")
+            else if (textBox5.Text == "")
             {
                 MessageBox.Show("No se modifico correo");
             }
@@ -359,7 +349,6 @@ namespace Endproyect
                 Actualizar();
                 textBox1.Text = "";
                 textBox2.Text = "";
-                textBox3.Text = "";
                 textBox4.Text = "";
                 textBox5.Text = "";
                 textBox6.Text = "";
@@ -374,7 +363,6 @@ namespace Endproyect
             }
             textBox1.Text = "";
             textBox2.Text = "";
-            textBox3.Text = "";
             textBox4.Text = "";
             textBox5.Text = "";
             textBox6.Text = "";

@@ -202,7 +202,7 @@ namespace Endproyect
             {
                 databaseConnection.Open();
                 MySqlDataReader myRead = commandDatabase.ExecuteReader();
-                MessageBox.Show("se ha registrado datos del cliente");
+                MessageBox.Show("Se ha registrado datos del cliente");
                 databaseConnection.Close();
                 textBox1.Text = "";
                 textBox2.Text = "";

@@ -19,7 +19,6 @@ C:\Users\myste\Desktop\Base_de_Datos-6to_Cuatrimestre\EndProyect\Endproyect\Endp
 C:\Users\myste\Desktop\Base_de_Datos-6to_Cuatrimestre\EndProyect\Endproyect\Endproyect\obj\Debug\Endproyect.Clientes_2.resources
 C:\Users\myste\Desktop\Base_de_Datos-6to_Cuatrimestre\EndProyect\Endproyect\Endproyect\obj\Debug\Endproyect.Clientes.resources
 C:\Users\myste\Desktop\Base_de_Datos-6to_Cuatrimestre\EndProyect\Endproyect\Endproyect\obj\Debug\Endproyect.Costos.resources
-C:\Users\myste\Desktop\Base_de_Datos-6to_Cuatrimestre\EndProyect\Endproyect\Endproyect\obj\Debug\Endproyect.Diseñador.resources
 C:\Users\myste\Desktop\Base_de_Datos-6to_Cuatrimestre\EndProyect\Endproyect\Endproyect\obj\Debug\Endproyect.Empleados.resources
 C:\Users\myste\Desktop\Base_de_Datos-6to_Cuatrimestre\EndProyect\Endproyect\Endproyect\obj\Debug\Endproyect.Empresas.resources
 C:\Users\myste\Desktop\Base_de_Datos-6to_Cuatrimestre\EndProyect\Endproyect\Endproyect\obj\Debug\Endproyect.equipos2.resources
