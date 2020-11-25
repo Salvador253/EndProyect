@@ -326,8 +326,8 @@ namespace Endproyect
         private void button7_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form4 menu = new Form4();
-            menu.Show();
+            menu_admins menu2 = new menu_admins();
+            menu2.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)

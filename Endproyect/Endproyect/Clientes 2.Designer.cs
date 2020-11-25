@@ -74,12 +74,14 @@
             // 
             // button2
             // 
+            this.button2.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(606, 270);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(122, 49);
             this.button2.TabIndex = 4;
-            this.button2.Text = "button2";
+            this.button2.Text = "MENU";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Clientes_2
             // 
