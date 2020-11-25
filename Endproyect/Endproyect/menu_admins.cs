@@ -25,7 +25,9 @@ namespace Endproyect
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Clientes Clientes_Load = new Clientes();
+            Clientes_Load.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -51,12 +53,16 @@ namespace Endproyect
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            equipos2 equipos2_Load = new equipos2();
+            equipos2_Load.Show();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Form2 Registrar = new Form2();
+            Registrar.Show();
         }
     }
 }

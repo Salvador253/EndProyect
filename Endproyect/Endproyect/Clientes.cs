@@ -262,7 +262,7 @@ namespace Endproyect
         private void button5_Click(object sender, EventArgs e)
         {
             this.Hide();
-            menu_admin menu2 = new menu_admin();
+            menu_admins menu2 = new menu_admins();
             menu2.Show();
         }
     }
