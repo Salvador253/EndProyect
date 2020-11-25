@@ -49,7 +49,20 @@ namespace Endproyect
 
         private void button1_Click(object sender, EventArgs e)
         {
-            login();
+            if (textBox1.Text == "")
+            {
+                MessageBox.Show("No se ha ingrasado un usuaro.");
+            }
+            else if(textBox2.Text == "")
+            {
+                MessageBox.Show("No se ha ingrasado una contaseña.");
+            }
+            else
+            {
+                login();
+                textBox1.Text = "";
+                textBox2.Text = "";
+            }
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)

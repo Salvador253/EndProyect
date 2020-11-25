@@ -114,5 +114,10 @@ namespace Endproyect
             this.linkLabel1.LinkVisited = true;
             System.Diagnostics.Process.Start("https://sites.google.com/view/x-raycompany/inicio");
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
