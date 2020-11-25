@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewGroup listViewGroup6 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup7 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup8 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup9 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup10 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup4 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup5 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
             this.NOMBRE = new System.Windows.Forms.Label();
             this.APELLIDO = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -141,17 +141,17 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(810, 65);
+            this.textBox4.Location = new System.Drawing.Point(520, 126);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(261, 20);
+            this.textBox4.Size = new System.Drawing.Size(111, 20);
             this.textBox4.TabIndex = 8;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(212, 125);
+            this.textBox5.Location = new System.Drawing.Point(804, 65);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(183, 20);
+            this.textBox5.Size = new System.Drawing.Size(209, 20);
             this.textBox5.TabIndex = 9;
             this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
@@ -164,22 +164,22 @@
             this.columnHeader5,
             this.columnHeader1,
             this.columnHeader6});
-            listViewGroup6.Header = "ListViewGroup";
-            listViewGroup6.Name = "NOMBRE";
-            listViewGroup7.Header = "ListViewGroup";
-            listViewGroup7.Name = "APELLIDO";
-            listViewGroup8.Header = "ListViewGroup";
-            listViewGroup8.Name = "CONTACTO";
-            listViewGroup9.Header = "ListViewGroup";
-            listViewGroup9.Name = "CORREO";
-            listViewGroup10.Header = "ListViewGroup";
-            listViewGroup10.Name = "ESPECIALIDAD";
+            listViewGroup1.Header = "ListViewGroup";
+            listViewGroup1.Name = "NOMBRE";
+            listViewGroup2.Header = "ListViewGroup";
+            listViewGroup2.Name = "APELLIDO";
+            listViewGroup3.Header = "ListViewGroup";
+            listViewGroup3.Name = "CONTACTO";
+            listViewGroup4.Header = "ListViewGroup";
+            listViewGroup4.Name = "CORREO";
+            listViewGroup5.Header = "ListViewGroup";
+            listViewGroup5.Name = "ESPECIALIDAD";
             this.listView1.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup6,
-            listViewGroup7,
-            listViewGroup8,
-            listViewGroup9,
-            listViewGroup10});
+            listViewGroup1,
+            listViewGroup2,
+            listViewGroup3,
+            listViewGroup4,
+            listViewGroup5});
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(188, 174);
             this.listView1.Name = "listView1";
@@ -254,9 +254,9 @@
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(515, 124);
+            this.textBox6.Location = new System.Drawing.Point(201, 125);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(117, 20);
+            this.textBox6.Size = new System.Drawing.Size(145, 20);
             this.textBox6.TabIndex = 14;
             this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 

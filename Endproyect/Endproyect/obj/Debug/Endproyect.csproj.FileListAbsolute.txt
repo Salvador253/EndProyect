@@ -95,5 +95,11 @@ C:\Users\Judith Vargas\Documents\GitHub\EndProyect\Endproyect\Endproyect\obj\Deb
 C:\Users\1047483\OneDrive\Documentos\GitHub\EndProyect\Endproyect\Endproyect\obj\Debug\Endproyect.Clientes.resources
 C:\Users\myste\Desktop\Base_de_Datos-6to_Cuatrimestre\EndProyect\Endproyect\Endproyect\obj\Debug\Endproyect.Clientes.resources
 C:\Users\myste\Desktop\Base_de_Datos-6to_Cuatrimestre\EndProyect\Endproyect\Endproyect\obj\Debug\Endproyect.Diseñador.resources
+<<<<<<< Updated upstream
 C:\Users\myste\Desktop\Base_de_Datos-6to_Cuatrimestre\EndProyect\Endproyect\Endproyect\obj\Debug\Endproyect.Clientes_2.resources
 C:\Users\myste\Desktop\Base_de_Datos-6to_Cuatrimestre\EndProyect\Endproyect\Endproyect\obj\Debug\Endproyect.Empleados.resources
+=======
+C:\Users\1047483\OneDrive\Documentos\GitHub\EndProyect\Endproyect\Endproyect\obj\Debug\Endproyect.Clientes_2.resources
+C:\Users\1047483\OneDrive\Documentos\GitHub\EndProyect\Endproyect\Endproyect\obj\Debug\Endproyect.Diseñador.resources
+C:\Users\1047483\OneDrive\Documentos\GitHub\EndProyect\Endproyect\Endproyect\obj\Debug\Endproyect.Empleados.resources
+>>>>>>> Stashed changes
