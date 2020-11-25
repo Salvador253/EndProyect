@@ -16,11 +16,5 @@ namespace Endproyect
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form4 menu = new Form4();
-            menu.Show();
-        }
     }
 }
