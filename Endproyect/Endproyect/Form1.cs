@@ -311,8 +311,7 @@ namespace Endproyect
                 }
                 else
                 {
-                    Console.WriteLine("EQUIPO INEXISTENTE");
-
+                    MessageBox.Show("Empleado ineistente");
                 }
                 conectionDatabase.Close();
             }

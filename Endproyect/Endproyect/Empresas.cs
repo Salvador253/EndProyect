@@ -169,7 +169,7 @@ namespace Endproyect
                 }
                 else
                 {
-                    Console.WriteLine("EQUIPO INEXISTENTE");
+                    MessageBox.Show("Empresa no encontrada.");
 
                 }
                 conectionDatabase.Close();
@@ -179,6 +179,7 @@ namespace Endproyect
                 MessageBox.Show(ex.Message);
             }
         }
+
         private void ActualizarRegistro()
         {
             string Connect = "datasource=localhost;port=3306;username=root;password=;database=xray";
@@ -371,6 +372,11 @@ namespace Endproyect
             this.Hide();
             menu_admins menu2 = new menu_admins();
             menu2.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Actualizar();
         }
     }
 }
