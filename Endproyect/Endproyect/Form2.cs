@@ -31,6 +31,7 @@ namespace Endproyect
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;
             MySqlDataReader reader;
+            string permiso;
 
             try
             {
@@ -39,12 +40,29 @@ namespace Endproyect
                 textBox1.Text = "";
                 textBox2.Text = "";
 
-                if (reader.Read())
+                if (reader.HasRows)
                 {
-                    MessageBox.Show("Bienvenido.");
-                    this.Hide();
-                    Form4 menu = new Form4();
-                    menu.Show();
+                    while (reader.Read())
+                    {
+
+                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3) };
+                        permiso = reader.GetString(3);
+                        string nombre = reader.GetString(1);
+
+                        if (permiso == "0")
+                        {
+                            MessageBox.Show("Bienvenido "+nombre);
+                            
+                            Diseñador menu1 = new Diseñador();
+                            menu1.Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Bienvenido."+nombre);
+                            Form4 menu2 = new Form4();
+                            menu2.Show();
+                        }
+                    }
                 }
                 else
                 {
@@ -75,6 +93,7 @@ namespace Endproyect
 
         private void button2_Click(object sender, EventArgs e)
         {
+            this.Hide();
             INICIO();
         }
 
