@@ -119,7 +119,7 @@ namespace Endproyect
         private void Buscar()
         {
             string Connect = "datasource=localhost;port=3306;username=root;password=;database=xray";
-            string query = "SELECT * FROM xray where id3= '" + textBox6.Text + "'";
+            string query = "SELECT * FROM empleados where id3= '" + textBox6.Text + "'";
             MySqlConnection databaseConnection = new MySqlConnection(Connect);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;
@@ -193,7 +193,7 @@ namespace Endproyect
             {
                 databaseConnection.Open();
                 MySqlDataReader myRead = commandDatabase.ExecuteReader();
-                MessageBox.Show("Costo eliminada.");
+                MessageBox.Show("Eliminado");
                 databaseConnection.Close();
                 textBox1.Text = "";
                 textBox2.Text = "";
