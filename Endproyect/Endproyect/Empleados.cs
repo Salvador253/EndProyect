@@ -130,5 +130,12 @@ namespace Endproyect
             Actualizar();
             textBox1.Text = "";
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form4 menu = new Form4();
+            menu.Show();
+        }
     }
 }
