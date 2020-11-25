@@ -63,6 +63,36 @@ namespace Endproyect.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _vectores_eps_csp50831931 {
+            get {
+                object obj = ResourceManager.GetObject("-vectores-eps_csp50831931", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap descarga {
+            get {
+                object obj = ResourceManager.GetObject("descarga", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap descarga1 {
+            get {
+                object obj = ResourceManager.GetObject("descarga1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Imagenes_3D_Cuerpo_Humano_Rayos_X {
             get {
                 object obj = ResourceManager.GetObject("Imagenes-3D-Cuerpo-Humano-Rayos-X", resourceCulture);
@@ -126,6 +156,26 @@ namespace Endproyect.Properties {
         internal static System.Drawing.Bitmap roentgen_0_small {
             get {
                 object obj = ResourceManager.GetObject("roentgen-0-small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tipos_de_clientes {
+            get {
+                object obj = ResourceManager.GetObject("Tipos-de-clientes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tipos_de_compradores {
+            get {
+                object obj = ResourceManager.GetObject("tipos_de_compradores", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

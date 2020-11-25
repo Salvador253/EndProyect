@@ -287,6 +287,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Endproyect.Properties.Resources._vectores_eps_csp50831931;
             this.ClientSize = new System.Drawing.Size(778, 433);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
