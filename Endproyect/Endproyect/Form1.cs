@@ -79,10 +79,10 @@ namespace Endproyect
             }
         }
 
-        private void BuscarRegistro()
+        private void MostrarDato()
         {
             string connection = "datasource=localhost;port=3306;username=root;password=;database=xray";
-            string query = "SELECT * FROM empleados ";
+            string query = "SELECT * FROM empleados where id3='" + textBox6.Text + "' ";
             MySqlConnection conectionDatabase = new MySqlConnection(connection);
             MySqlCommand databaseCommand = new MySqlCommand(query, conectionDatabase);
             databaseCommand.CommandTimeout = 60;
@@ -136,9 +136,9 @@ namespace Endproyect
                     {
                         string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5) };
                         textBox1.Text = row[1];
-                        textBox3.Text = row[2];
-                        textBox4.Text = row[3];
-                        textBox2.Text = row[4];
+                        textBox3.Text = row[3];
+                        textBox4.Text = row[4];
+                        textBox2.Text = row[2];
                         textBox5.Text = row[5];
                     }
                 }
@@ -157,7 +157,7 @@ namespace Endproyect
         private void Modificardato()
         {
             string Connect = "datasource=localhost;port=3306;username=root;password=;database=xray";
-            string query = "UPDATE `empleados` SET `nombre`='" + textBox1.Text + "',`apellido`='" + textBox2.Text + "',`n_contacto`='" + textBox3.Text + "',`correo`='" + textBox4.Text + "',`especialidad`='" + textBox5.Text + "',`id3`='" + textBox6.Text +  "'";
+            string query = "UPDATE `empleados` SET `nombre`='" + textBox1.Text + "',`apellido`='" + textBox2.Text + "',`n_contacto`='" + textBox3.Text + "',`correo`='" + textBox4.Text + "',`especialidad`='" + textBox5.Text + "' WHERE id3='" + textBox6.Text +  "'";
             MySqlConnection databaseConnection = new MySqlConnection(Connect);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;
@@ -264,12 +264,12 @@ namespace Endproyect
         private void button1_Click(object sender, EventArgs e)
         {
             Registro();
-            BuscarRegistro();
+   
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            BuscarRegistro();
+            MostrarDato();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -309,7 +309,7 @@ namespace Endproyect
             else
             {
                 Modificardato();
-                BuscarRegistro();
+                MostrarDato();
                 textBox1.Text = "";
                 textBox2.Text = "";
                 textBox3.Text = "";
