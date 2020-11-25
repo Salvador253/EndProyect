@@ -16,5 +16,10 @@ namespace Endproyect
         {
             InitializeComponent();
         }
+
+        private void Diseñador_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
