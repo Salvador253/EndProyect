@@ -56,7 +56,7 @@ namespace Endproyect
         private void NuevoRegistro()
         {
             string connection = "datasource=localhost;port=3306;username=root;password=;database=xray";
-            string query = "INSERT INTO costos (`id2`, `precio`, `equipo`, `no_serie`, `estado`) VALUES (NULL,'" + textBox2.Text + "', '" + textBox3.Text + "', '" + textBox4.Text + "', '" + textBox5.Text + "')";
+            string query = "INSERT INTO costos (`id2`, `precio`, `equipo`, `no_serie`, `estado`) VALUES (NULL,'" + textBox2.Text + "', '" + textBox3.Text + "', '" + textBox4.Text + "', '" + comboBox1.Text + "')";
             MySqlConnection conectionDatabase = new MySqlConnection(connection);
             MySqlCommand databaseCommand = new MySqlCommand(query, conectionDatabase);
             databaseCommand.CommandTimeout = 60;
@@ -130,7 +130,7 @@ namespace Endproyect
                         textBox1.Text = row[1];
                         textBox3.Text = row[2];
                         textBox4.Text = row[3];
-                        textBox5.Text = row[4];
+                        comboBox1.Text = row[4];
                     }
                 }
                 else
@@ -148,7 +148,7 @@ namespace Endproyect
         private void ActualizarRegistro()
         {
             string Connect = "datasource=localhost;port=3306;username=root;password=;database=xray";
-            string query = "UPDATE `costos` SET `id2`='" + textBox1.Text + "',`precio`='" + textBox2.Text + "',`equipo`='" + textBox3.Text + "',`no_serie`='" + textBox4.Text + "',`estado`='" + textBox5.Text + "'";
+            string query = "UPDATE `costos` SET `id2`='" + textBox1.Text + "',`precio`='" + textBox2.Text + "',`equipo`='" + textBox3.Text + "',`no_serie`='" + textBox4.Text + "',`estado`='" + comboBox1.Text + "'";
             MySqlConnection databaseConnection = new MySqlConnection(Connect);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;
@@ -163,7 +163,7 @@ namespace Endproyect
                 textBox2.Text = "";
                 textBox3.Text = "";
                 textBox4.Text = "";
-                textBox5.Text = "";
+                comboBox1.Text = "";
             }
             catch (Exception ex)
             {
@@ -188,7 +188,42 @@ namespace Endproyect
                 textBox2.Text = "";
                 textBox3.Text = "";
                 textBox4.Text = "";
-                textBox5.Text = "";
+                comboBox1.Text = "";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Actualizarlist()
+        {
+            string connection = "datasource=localhost;port=3306;username=root;password=;database=xray";
+            string query = "SELECT * FROM empresas where id4 = '" + textBox2.Text + "'";
+            MySqlConnection conectionDatabase = new MySqlConnection(connection);
+            MySqlCommand databaseCommand = new MySqlCommand(query, conectionDatabase);
+            databaseCommand.CommandTimeout = 60;
+            MySqlDataReader reader;
+
+            try
+            {
+                conectionDatabase.Open();
+                reader = databaseCommand.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5) };
+                        var listViewItem = new ListViewItem(row);
+                        listView1.Items.Add(listViewItem);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Empresa no encontrada.");
+
+                }
+                conectionDatabase.Close();
             }
             catch (Exception ex)
             {
@@ -228,25 +263,22 @@ namespace Endproyect
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "")
+            if (textBox2.Text == "")
             {
-                MessageBox.Show("No tienes nombre de la empresa");
+                MessageBox.Show("No tienes nombre de la precio");
             }
             else if (textBox3.Text == "")
             {
                 MessageBox.Show("No tienes nombre del titular");
             }
-<<<<<<< HEAD
             else if (textBox4.Text == "")
             {
-                MessageBox.Show("No pusiste marca");
+                MessageBox.Show("No pusiste numero de serie.");
             }
             else if (comboBox1.Text == "")
             {
-                MessageBox.Show("No pusiste número de contacto");
+                MessageBox.Show("No pusiste número de estado");
             }
-=======
->>>>>>> 9743cf40bd879b85c8121f26750f1ff0e75198bc
             else
             { 
                 NuevoRegistro();
@@ -254,20 +286,21 @@ namespace Endproyect
                 textBox1.Text = "";
                 textBox3.Text = "";
                 textBox4.Text = "";
-                textBox5.Text = "";
+                comboBox1.Text = "";
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Buscar();
+            Actualizarlist();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "")
+            if (textBox2.Text == "")
             {
-                MessageBox.Show("No tienes nombre de la empresa");
+                MessageBox.Show("No tienes nombre de la precio");
             }
             else if (textBox3.Text == "")
             {
@@ -275,11 +308,11 @@ namespace Endproyect
             }
             else if (textBox4.Text == "")
             {
-                MessageBox.Show("No pusiste marca");
+                MessageBox.Show("No pusiste numero de serie.");
             }
-            else if (textBox5.Text == "")
+            else if (comboBox1.Text == "")
             {
-                MessageBox.Show("No pusiste número de contacto");
+                MessageBox.Show("No pusiste número de estado");
             }
             else
             {
@@ -289,7 +322,7 @@ namespace Endproyect
                 textBox2.Text = "";
                 textBox3.Text = "";
                 textBox4.Text = "";
-                textBox5.Text = "";
+                comboBox1.Text = "";
             }
         }
 
@@ -299,13 +332,11 @@ namespace Endproyect
             {
                 Eliminar();
             }
+            textBox1.Text = "";
             textBox2.Text = "";
-<<<<<<< HEAD
-=======
             textBox3.Text = "";
             textBox4.Text = "";
-            textBox5.Text = "";
->>>>>>> 9743cf40bd879b85c8121f26750f1ff0e75198bc
+            comboBox1.Text = "";
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -313,6 +344,11 @@ namespace Endproyect
             this.Hide();
             menu_admins menu2 = new menu_admins();
             menu2.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Actualizar();
         }
     }
 }

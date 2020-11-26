@@ -29,7 +29,7 @@ namespace Endproyect
             string query = "SELECT * FROM clientes";
             MySqlConnection conectionDatabase = new MySqlConnection(connection);
             MySqlCommand databaseCommand = new MySqlCommand(query, conectionDatabase);
-            databaseCommand.CommandTimeout = 60;    
+            databaseCommand.CommandTimeout = 60;
             MySqlDataReader reader;
 
             try
@@ -40,14 +40,14 @@ namespace Endproyect
                 {
                     while (reader.Read())
                     {
-                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4),reader.GetString(5),reader.GetString(6) };
+                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4) };
                         var listViewItem = new ListViewItem(row);
                         listView1.Items.Add(listViewItem);
                     }
                 }
                 else
                 {
-                    Console.WriteLine("No se puedo accesar");
+                    MessageBox.Show("No se puedo accesar");
                 }
                 conectionDatabase.Close();
             }
@@ -59,7 +59,7 @@ namespace Endproyect
         private void actualizardatos()
         {
             string Connect = "datasource=localhost;port=3306;username=root;password=;database=xray";
-            string query = "UPDATE `clientes` SET `id1`='" + textBox1.Text + "',`nombrehe`='" + textBox3.Text + "',`encargado`='" + textBox2.Text + "',`equipo`='" + textBox4.Text + "',`no_serie` ='" + textBox5.Text + "',`marca` = '" + textBox6.Text + "', `modelo`='" + textBox7.Text + "'";
+            string query = "UPDATE `clientes` SET `id1`='" + textBox1.Text + "',`nombrehe`='" + textBox2.Text + "',`encargado`='" + textBox3.Text + "',`equipo`='" + textBox4.Text + "',`no_serie` ='" + textBox5.Text + "',`marca` = '" + textBox6.Text + "', `modelo`='" + textBox7.Text + "'";
             MySqlConnection databaseConnection = new MySqlConnection(Connect);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;
@@ -69,7 +69,7 @@ namespace Endproyect
             {
                 databaseConnection.Open();
                 MySqlDataReader myRead = commandDatabase.ExecuteReader();
-                MessageBox.Show("datos actualizados");
+                MessageBox.Show("Datos actualizados");
                 databaseConnection.Close();
                 textBox1.Text = "";
                 textBox2.Text = "";
@@ -105,18 +105,18 @@ namespace Endproyect
                     while (reader.Read())
                     {
                         string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6) };
-                        textBox1.Text = row[0];
-                        textBox3.Text = row[2];
-                        textBox2.Text = row[1];
-                        textBox4.Text = row[3];
-                        textBox5.Text = row[4];
-                        textBox6.Text = row[5];
-                        textBox7.Text = row[6];
+                        textBox1.Text = row[1];
+                        textBox3.Text = row[3];
+                        textBox2.Text = row[2];
+                        textBox4.Text = row[4];
+                        textBox5.Text = row[5];
+                        textBox6.Text = row[6];
+                        textBox7.Text = row[7];
                     }   
                 }
                 else
                 {
-                     MessageBox.Show("se han buscado los datos.");
+                     MessageBox.Show("No se han buscado los datos.");
                 }
                 databaseConnection.Close();
             }
@@ -153,8 +153,6 @@ namespace Endproyect
             {
                 MessageBox.Show(ex.Message);
             }
-<<<<<<< HEAD
-=======
         }
 
         private void Actualizarlist()
@@ -172,10 +170,9 @@ namespace Endproyect
                 reader = databaseCommand.ExecuteReader();
                 if (reader.HasRows)
                 {
-                    listView1.Items.Clear();
                     while (reader.Read())
                     {
-                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6) };
+                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5) };
                         var listViewItem = new ListViewItem(row);
                         listView1.Items.Add(listViewItem);
                     }
@@ -183,17 +180,20 @@ namespace Endproyect
                 else
                 {
                     MessageBox.Show("Empresa no encontrada.");
->>>>>>> 9743cf40bd879b85c8121f26750f1ff0e75198bc
 
+                }
+                conectionDatabase.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
+
         private void registrarcliente()
         {
             string Connect = "datasource=localhost;port=3306;username=root;password=;database=xray";
-<<<<<<< HEAD
-            string query = "INSERT INTO nombre(`id1`, `nombrehe`,`encargado`, `equipo`, `no_serie`,`marca`,`modelo`) VALUES( NULL, '" + textBox1.Text + "', '" + textBox3.Text + "', '" + textBox2.Text + "', '" + textBox4.Text + "', '" + textBox5.Text + "', '" + textBox6.Text + "', '" + textBox7.Text + "')";
-=======
-            string query = "INSERT INTO `clientes` (`id1`, `nombrehe`,`encargado`, `equipo`, `no_serie`,`marca`,`modelo`) VALUES( NULL, '" + textBox2.Text + "', '" + textBox3.Text + "', '" + textBox4.Text + "', '" + textBox5.Text + "', '" + textBox6.Text + "', '" + textBox7.Text + "')";
->>>>>>> 9743cf40bd879b85c8121f26750f1ff0e75198bc
+            string query = "INSERT INTO nombre(`id1`, `nombrehe`,`encargado`, `equipo`, `no_serie`,`marca`,`modelo`) VALUES( NULL, '" + textBox2.Text + "', '" + textBox3.Text + "', '" + textBox2.Text + "', '" + textBox4.Text + "', '" + textBox5.Text + "', '" + textBox6.Text + "', '" + textBox7.Text + "')";
             MySqlConnection databaseConnection = new MySqlConnection(Connect);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;
@@ -202,7 +202,7 @@ namespace Endproyect
             {
                 databaseConnection.Open();
                 MySqlDataReader myRead = commandDatabase.ExecuteReader();
-                MessageBox.Show("se ha registrado datos del cliente");
+                MessageBox.Show("Se ha registrado datos del cliente");
                 databaseConnection.Close();
                 textBox1.Text = "";
                 textBox2.Text = "";
@@ -261,61 +261,96 @@ namespace Endproyect
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Buscardatos();
-            actualizardatos();
-            textBox1.Text = "";
-            textBox2.Text = "";
-            textBox3.Text = "";
-            textBox4.Text = "";
-            textBox5.Text = "";
-            textBox6.Text = "";
-            textBox7.Text = "";
+            if (textBox2.Text == "")
+            {
+                MessageBox.Show("No tienes nombre");
+            }
+            else if (textBox3.Text == "")
+            {
+                MessageBox.Show("No tienes encargado");
+            }
+            else if (textBox4.Text == "")
+            {
+                MessageBox.Show("No pusiste un equipo");
+            }
+            else if (textBox5.Text == "")
+            {
+                MessageBox.Show("No pusiste numero de serie");
+            }
+            else if (textBox6.Text == "")
+            {
+                MessageBox.Show("No pusiste marca");
+            }
+            else if (textBox7.Text == "")
+            {
+                MessageBox.Show("No pusiste modelo");
+            }
+            else
+            {
+                Buscardatos();
+                actualizardatos();
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
+                textBox5.Text = "";
+                textBox6.Text = "";
+                textBox7.Text = "";
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Buscardatos();
-        }
-
-        private void Actualizar()
-        {
-            string connection = "datasource=localhost;port=3306;username=root;password=;database=xray";
-            string query = "SELECT * FROM equipos";
-            MySqlConnection conectionDatabase = new MySqlConnection(connection);
-            MySqlCommand databaseCommand = new MySqlCommand(query, conectionDatabase);
-            databaseCommand.CommandTimeout = 60;
-            MySqlDataReader reader;
-
-            try
-            {
-                conectionDatabase.Open();
-                reader = databaseCommand.ExecuteReader();
-                if (reader.HasRows)
-                {
-                    listView1.Items.Clear();
-                    while (reader.Read())
-                    {
-                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5),reader.GetString(6) };
-                        var listViewItem = new ListViewItem(row);
-                        listView1.Items.Add(listViewItem);
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("EQUIPO INEXISTENTE");
-
-                }
-                conectionDatabase.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            Actualizarlist();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            registrarcliente();
+            if (textBox2.Text == "")
+            {
+                MessageBox.Show("No tienes nombre");
+            }
+            else if (textBox3.Text == "")
+            {
+                MessageBox.Show("No tienes encargado");
+            }
+            else if (textBox4.Text == "")
+            {
+                MessageBox.Show("No pusiste un equipo");
+            }
+            else if (textBox5.Text == "")
+            {
+                MessageBox.Show("No pusiste numero de serie");
+            }
+            else if (textBox6.Text == "")
+            {
+                MessageBox.Show("No pusiste marca");
+            }
+            else if (textBox7.Text == "")
+            {
+                MessageBox.Show("No pusiste modelo");
+            }
+            else
+            {
+                registrarcliente();
+                actualizardatos();
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
+                textBox5.Text = "";
+                textBox6.Text = "";
+                textBox7.Text = "";
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Esta seguro de eliminar esta empresa?", "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                borrardatos();
+            }
             textBox1.Text = "";
             textBox2.Text = "";
             textBox3.Text = "";
@@ -323,11 +358,6 @@ namespace Endproyect
             textBox5.Text = "";
             textBox6.Text = "";
             textBox7.Text = "";
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            borrardatos();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -336,13 +366,10 @@ namespace Endproyect
             menu_admins menu2 = new menu_admins();
             menu2.Show();
         }
-<<<<<<< HEAD
-=======
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Actualizar();
+            actualizardatos();
         }
->>>>>>> 9743cf40bd879b85c8121f26750f1ff0e75198bc
     }
 }
