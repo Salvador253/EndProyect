@@ -28,43 +28,114 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Empleados));
+            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup4 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup5 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup6 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
             this.label1 = new System.Windows.Forms.Label();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Nombre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Apellido = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Contacto = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Correo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Especialidad = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+<<<<<<< HEAD
+=======
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+>>>>>>> 9743cf40bd879b85c8121f26750f1ff0e75198bc
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Felix Titling", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(98, 9);
+            this.label1.Location = new System.Drawing.Point(207, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 40);
             this.label1.TabIndex = 0;
             this.label1.Text = "ID";
             // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ID,
+            this.Nombre,
+            this.Apellido,
+            this.Contacto,
+            this.Correo,
+            this.Especialidad});
+            listViewGroup1.Header = "ListViewGroup";
+            listViewGroup1.Name = "ID";
+            listViewGroup2.Header = "ListViewGroup";
+            listViewGroup2.Name = "Nombre";
+            listViewGroup3.Header = "ListViewGroup";
+            listViewGroup3.Name = "Apellido";
+            listViewGroup4.Header = "ListViewGroup";
+            listViewGroup4.Name = "Contacto";
+            listViewGroup5.Header = "ListViewGroup";
+            listViewGroup5.Name = "Correo";
+            listViewGroup6.Header = "ListViewGroup";
+            listViewGroup6.Name = "Especialidad";
+            this.listView1.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
+            listViewGroup1,
+            listViewGroup2,
+            listViewGroup3,
+            listViewGroup4,
+            listViewGroup5,
+            listViewGroup6});
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(22, 105);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(563, 249);
+            this.listView1.TabIndex = 1;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // ID
+            // 
+            this.ID.Text = "ID";
+            // 
+            // Nombre
+            // 
+            this.Nombre.Text = "Nombre";
+            // 
+            // Apellido
+            // 
+            this.Apellido.Text = "Apellido";
+            // 
+            // Contacto
+            // 
+            this.Contacto.Text = "Contacto";
+            // 
+            // Correo
+            // 
+            this.Correo.Text = "Correo";
+            // 
+            // Especialidad
+            // 
+            this.Especialidad.Text = "Especialidad";
+            // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(71, 65);
+            this.textBox1.Location = new System.Drawing.Point(185, 65);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 2;
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(231, 30);
+            this.button1.Font = new System.Drawing.Font("Felix Titling", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(630, 150);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 37);
+            this.button1.Size = new System.Drawing.Size(120, 55);
             this.button1.TabIndex = 3;
             this.button1.Text = "Buscar";
             this.button1.UseVisualStyleBackColor = true;
@@ -72,30 +143,34 @@
             // 
             // button2
             // 
+<<<<<<< HEAD
+            this.button2.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(630, 254);
+=======
             this.button2.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(669, 30);
+            this.button2.Location = new System.Drawing.Point(371, 30);
+>>>>>>> 9743cf40bd879b85c8121f26750f1ff0e75198bc
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(82, 37);
+            this.button2.Size = new System.Drawing.Size(120, 52);
             this.button2.TabIndex = 4;
             this.button2.Text = "MENU";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+<<<<<<< HEAD
+=======
             // listView1
             // 
             this.listView1.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6});
+            this.columnHeader3});
             this.listView1.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(12, 114);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(798, 235);
+            this.listView1.Size = new System.Drawing.Size(441, 235);
             this.listView1.TabIndex = 5;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -116,35 +191,26 @@
             this.columnHeader3.Text = "Nom_Titular";
             this.columnHeader3.Width = 200;
             // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Marca";
-            this.columnHeader4.Width = 100;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Contacto";
-            this.columnHeader5.Width = 120;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Correo";
-            this.columnHeader6.Width = 150;
-            // 
+>>>>>>> 9743cf40bd879b85c8121f26750f1ff0e75198bc
             // Empleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
+            this.BackgroundImage = global::Endproyect.Properties.Resources.tipos_de_compradores;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+=======
             this.BackgroundImage = global::Endproyect.Properties.Resources.rayosx;
-            this.ClientSize = new System.Drawing.Size(822, 361);
+            this.ClientSize = new System.Drawing.Size(468, 361);
             this.Controls.Add(this.listView1);
+>>>>>>> 9743cf40bd879b85c8121f26750f1ff0e75198bc
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.label1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Empleados";
-            this.Text = "Empresas";
+            this.Text = "Empleados";
             this.Load += new System.EventHandler(this.Empleados_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -154,15 +220,22 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+<<<<<<< HEAD
+        private System.Windows.Forms.ColumnHeader ID;
+        private System.Windows.Forms.ColumnHeader Nombre;
+        private System.Windows.Forms.ColumnHeader Apellido;
+        private System.Windows.Forms.ColumnHeader Contacto;
+        private System.Windows.Forms.ColumnHeader Correo;
+        private System.Windows.Forms.ColumnHeader Especialidad;
+=======
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
+>>>>>>> 9743cf40bd879b85c8121f26750f1ff0e75198bc
     }
 }

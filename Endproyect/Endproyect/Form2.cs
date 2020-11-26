@@ -52,16 +52,15 @@ namespace Endproyect
                         if (permiso == "0")
                         {
                             MessageBox.Show("Bienvenido "+nombre);
-                            this.Hide();
-                            menu_admins menu1 = new menu_admins();
+                            
+                            Diseñador menu1 = new Diseñador();
                             menu1.Show();
                         }
                         else
                         {
-                            MessageBox.Show("Sea bienvenido "+nombre);
-                            this.Hide();
-                            Form4 menu = new Form4();
-                            menu.Show();
+                            MessageBox.Show("Bienvenido."+nombre);
+                            Form4 menu2 = new Form4();
+                            menu2.Show();
                         }
                     }
                 }
@@ -94,6 +93,7 @@ namespace Endproyect
 
         private void button2_Click(object sender, EventArgs e)
         {
+            this.Hide();
             INICIO();
         }
 

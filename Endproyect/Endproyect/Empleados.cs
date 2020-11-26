@@ -21,7 +21,7 @@ namespace Endproyect
         private void Empleados_Load(object sender, EventArgs e)
         {
             string connection = "datasource=localhost;port=3306;username=root;password=;database=xray";
-            string query = "SELECT * FROM empresa_empleado";
+            string query = "SELECT * FROM empleados";
             MySqlConnection conectionDatabase = new MySqlConnection(connection);
             MySqlCommand databaseCommand = new MySqlCommand(query, conectionDatabase);
             databaseCommand.CommandTimeout = 60;
@@ -35,7 +35,7 @@ namespace Endproyect
                 {
                     while (reader.Read())
                     {
-                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2) };
+                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5) };
                         var listViewItem = new ListViewItem(row);
                         listView1.Items.Add(listViewItem);
                     }
@@ -56,7 +56,7 @@ namespace Endproyect
         private void Actualizar()
         {
             string connection = "datasource=localhost;port=3306;username=root;password=;database=xray";
-            string query = "SELECT * FROM empresa_empleado where id_ee = '" + textBox1.Text + "'";
+            string query = "SELECT * FROM empleados where id3 = '" + textBox1.Text + "'";
             MySqlConnection conectionDatabase = new MySqlConnection(connection);
             MySqlCommand databaseCommand = new MySqlCommand(query, conectionDatabase);
             databaseCommand.CommandTimeout = 60;
@@ -70,7 +70,7 @@ namespace Endproyect
                 {
                     while (reader.Read())
                     {
-                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2) };
+                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5) };
                         var listViewItem = new ListViewItem(row);
                         listView1.Items.Add(listViewItem);
                     }
@@ -91,7 +91,7 @@ namespace Endproyect
         private void Buscar()
         {
             string Connect = "datasource=localhost;port=3306;username=root;password=;database=xray";
-            string query = "SELECT * FROM empresa_empleado where id_ee = '" + textBox1.Text + "'";
+            string query = "SELECT * FROM empleados where id3 = '" + textBox1.Text + "'";
             MySqlConnection databaseConnection = new MySqlConnection(Connect);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;
@@ -106,7 +106,7 @@ namespace Endproyect
                     listView1.Items.Clear();
                     while (reader.Read())
                     {
-                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2) };
+                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5) };
                         textBox1.Text = row[0];
                        
                     }
@@ -136,11 +136,6 @@ namespace Endproyect
             this.Hide();
             Form4 menu = new Form4();
             menu.Show();
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

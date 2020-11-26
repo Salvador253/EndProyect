@@ -30,9 +30,7 @@ namespace Endproyect
 
         private void button4_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Empleados empresa = new Empleados();
-            empresa.Show();
+
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -52,8 +50,20 @@ namespace Endproyect
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Clientes_2 cliente = new Clientes_2();
-            cliente.Show();
+            Clientes_2 Clientes_2_Load = new Clientes_2();
+            Clientes_2_Load.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Empleados Empleados_Load = new Empleados();
+            Empleados_Load.Show();
         }
     }
 }

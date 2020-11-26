@@ -42,7 +42,6 @@
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(333, 204);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(131, 37);
@@ -53,7 +52,6 @@
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(83, 204);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(129, 37);
@@ -82,31 +80,31 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Lucida Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(235, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 27);
+            this.label1.Size = new System.Drawing.Size(120, 29);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Usuario";
+            this.label1.Text = "USUARIO";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Lucida Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(202, 102);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 27);
+            this.label2.Size = new System.Drawing.Size(180, 29);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Contraseña";
+            this.label2.Text = "CONTRASEÑA";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(199, 183);
+            this.label3.Location = new System.Drawing.Point(215, 183);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(196, 18);
+            this.label3.Size = new System.Drawing.Size(160, 18);
             this.label3.TabIndex = 7;
             this.label3.Text = "Datos no coincidentes.";
             this.label3.Visible = false;
@@ -115,18 +113,16 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(220, 263);
+            this.linkLabel1.Location = new System.Drawing.Point(215, 263);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(142, 15);
+            this.linkLabel1.Size = new System.Drawing.Size(140, 13);
             this.linkLabel1.TabIndex = 8;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Acerca de nosotros...";
+            this.linkLabel1.Text = "HACERCA DE NOSOTROS";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // button3
             // 
-            this.button3.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(452, 312);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(99, 45);

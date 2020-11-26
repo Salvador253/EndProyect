@@ -36,7 +36,7 @@ namespace Endproyect
                 {
                     while (reader.Read())
                     {
-                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4) };
+                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5) };
                         var listViewItem = new ListViewItem(row);
                         listView1.Items.Add(listViewItem);
 
@@ -44,7 +44,7 @@ namespace Endproyect
                 }
                 else
                 {
-                    MessageBox.Show("Sin conexion");
+                    Console.WriteLine("No hay datos existentes");
                 }
                 conectionDatabase.Close();
 
@@ -55,10 +55,10 @@ namespace Endproyect
             }
         }
 
-        private void RegistroEmpleado()
+        private void GuardarUsuario()
         {
             string connection = "datasource=localhost;port=3306;username=root;password=;database=xray";
-            string query = "INSERT INTO empleados(`n_contacto`, `nombre_em`, `apellido`, `correo`, `especialidad`) VALUES ('"+ textBox4.Text+"', '" + textBox1.Text + "', '" + textBox2.Text + "', '" + textBox5.Text + "', '" + textBox6.Text + "')";
+            string query = "INSERT INTO empleados(`id3`, `nombre`, `apellido`, `n_contacto`, 'correo', 'especialidad') VALUES (NULL, '" + textBox1.Text + "', '" + textBox2.Text + "', '" + textBox3.Text + "', '" + textBox5.Text + "', '" + textBox6.Text + "')";
             MySqlConnection conectionDatabase = new MySqlConnection(connection);
             MySqlCommand databaseCommand = new MySqlCommand(query, conectionDatabase);
             databaseCommand.CommandTimeout = 60;
@@ -67,7 +67,7 @@ namespace Endproyect
             {
                 conectionDatabase.Open();
                 MySqlDataReader reader1 = databaseCommand.ExecuteReader();
-                MessageBox.Show("Nuevo empleado agregado correctamente.");
+                MessageBox.Show("Lograste Guardar el dato");
                 conectionDatabase.Close();
             }
             catch (Exception ex)
@@ -79,7 +79,7 @@ namespace Endproyect
         private void borrar()
         {
             string connection = "datasource=localhost;port=3306;username=root;password=;database=xray";
-            string query = "DELETE FROM empleados WHERE n_contacto='" + textBox4.Text + "' ";
+            string query = "DELETE FROM empleados WHERE id3='" + textBox4.Text + "' ";
             MySqlConnection conectionDatabase = new MySqlConnection(connection);
             MySqlCommand databaseCommand = new MySqlCommand(query, conectionDatabase);
             databaseCommand.CommandTimeout = 60;
@@ -102,7 +102,7 @@ namespace Endproyect
         private void modificar()
         {
             string connection = "datasource=localhost;port=3306;username=root;password=;database=xray";
-            string query = "UPDATE empleados SET nombre_em='" + textBox1.Text + "',apellido='" + textBox2.Text + "', correo='" + textBox5.Text + "',especialidad='" + textBox6.Text + "' WHERE n_contacto='"+ textBox4.Text + "' ";
+            string query = "UPDATE empleados SET nombre='" + textBox1.Text + "',apellido='" + textBox2.Text + "',n_contacto='" + textBox3.Text + "',correo='" + textBox5.Text + "',especialidad='" + textBox6.Text + "' WHERE id3='" + textBox4.Text + "' ";
             MySqlConnection conectionDatabase = new MySqlConnection(connection);
             MySqlCommand databaseCommand = new MySqlCommand(query, conectionDatabase);
             databaseCommand.CommandTimeout = 60;
@@ -124,7 +124,7 @@ namespace Endproyect
         private void buscar()
         {
             string Connect = "datasource=localhost;port=3306;username=root;password=;database=xray;";
-            string query = "SELECT * FROM empleados where n_contacto='" + textBox4.Text + "' ";
+            string query = "SELECT * FROM empleados where id3='" + textBox4.Text + "' ";
             MySqlConnection databaseConnection = new MySqlConnection(Connect);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;
@@ -140,10 +140,11 @@ namespace Endproyect
                     listView1.Items.Clear();
                     while (reader.Read())
                     {
-                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4) };
+                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5) };
                        
                         textBox1.Text = row[1];
                         textBox2.Text = row[2];
+                        textBox3.Text = row[3];
                         textBox5.Text = row[4];
                         textBox6.Text = row[5];
                     }
@@ -161,7 +162,7 @@ namespace Endproyect
             }
         }
 
-        private void Actualizar()
+        private void MostrarUsuario()
         {
             string Connect = "datasource=localhost;port=3306;username=root;password=;database=xray;";
             string query = "SELECT * FROM empleados";
@@ -179,7 +180,7 @@ namespace Endproyect
                     listView1.Items.Clear();
                     while (reader.Read())
                     {
-                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4) };
+                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5) };
                         var ListViewItems = new ListViewItem(row);
                         listView1.Items.Add(ListViewItems);
                     }
@@ -253,66 +254,12 @@ namespace Endproyect
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "")
-            {
-                MessageBox.Show("No se modifico ningun nombre ");
-            }
-            else if (textBox2.Text == "")
-            {
-                MessageBox.Show("No se modifico apellido");
-            }
-            else if (textBox5.Text == "")
-            {
-                MessageBox.Show("No se modifico correo");
-            }
-            else if (textBox6.Text == "")
-            {
-                MessageBox.Show("No se modifico especialidad");
-            }
-            else
-            {
-                RegistroEmpleado();
-                Actualizar();
-                textBox1.Text = "";
-                textBox2.Text = "";
-                textBox4.Text = "";
-                textBox5.Text = "";
-                textBox6.Text = "";
-            }
+            GuardarUsuario();
         }
 
-        private void Actualizarlist()
+        private void button2_Click(object sender, EventArgs e)
         {
-            string connection = "datasource=localhost;port=3306;username=root;password=;database=xray";
-            string query = "SELECT * FROM empleados where n_contacto = '" + textBox4.Text + "'";
-            MySqlConnection conectionDatabase = new MySqlConnection(connection);
-            MySqlCommand databaseCommand = new MySqlCommand(query, conectionDatabase);
-            databaseCommand.CommandTimeout = 60;
-            MySqlDataReader reader;
-
-            try
-            {
-                conectionDatabase.Open();
-                reader = databaseCommand.ExecuteReader();
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4) };
-                        var listViewItem = new ListViewItem(row);
-                        listView1.Items.Add(listViewItem);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Empleado ineistente");
-                }
-                conectionDatabase.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            MostrarUsuario();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -325,6 +272,8 @@ namespace Endproyect
 
         }
 
+       
+
         private void button4_Click(object sender, EventArgs e)
         {
             if (textBox1.Text == "")
@@ -335,37 +284,34 @@ namespace Endproyect
             {
                 MessageBox.Show("No se modifico apellido");
             }
-            else if (textBox5.Text == "")
+            else if (textBox3.Text == "")
+            {
+                MessageBox.Show("No se modifico contacto");
+            }
+            else if (textBox4.Text == "")
             {
                 MessageBox.Show("No se modifico correo");
             }
-            else if (textBox6.Text == "")
+            else if (textBox5.Text == "")
             {
                 MessageBox.Show("No se modifico especialidad");
             }
             else
             {
                 modificar();
-                Actualizar();
+                MostrarUsuario();
+
                 textBox1.Text = "";
                 textBox2.Text = "";
+                textBox3.Text = "";
                 textBox4.Text = "";
                 textBox5.Text = "";
-                textBox6.Text = "";
             }
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Esta seguro de eliminar esta empresa?", "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                borrar();
-            }
-            textBox1.Text = "";
-            textBox2.Text = "";
-            textBox4.Text = "";
-            textBox5.Text = "";
-            textBox6.Text = "";
+            borrar();
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -378,12 +324,6 @@ namespace Endproyect
         private void button3_Click(object sender, EventArgs e)
         {
             buscar();
-            Actualizarlist();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Actualizar();
         }
     }
     }

@@ -21,7 +21,7 @@ namespace Endproyect
         private void login()
         {
             string connect = "datasource=localhost;port=3306;username=root;password=;database=xray";
-            string query = "INSERT INTO usuarios(`id6`,`nombre`, `password`,`permiso`) VALUES (NULL, '" + textBox1.Text + "', '" + textBox2.Text + "', 1)";
+            string query = "INSERT INTO usuarios(`id6`,`nombre`, `password`) VALUES (NULL, '" + textBox1.Text + "', '" + textBox2.Text + "')";
             MySqlConnection databaseConnection = new MySqlConnection(connect);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;
@@ -30,7 +30,7 @@ namespace Endproyect
             {
                 databaseConnection.Open();
                 MySqlDataReader reader = commandDatabase.ExecuteReader();
-                MessageBox.Show("Registro Exitoso.", "Registro");
+                MessageBox.Show("Registro Exitoso");
                 databaseConnection.Close();
 
                 textBox1.Text = "";
