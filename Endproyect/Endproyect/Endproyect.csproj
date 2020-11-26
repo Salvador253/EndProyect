@@ -64,12 +64,6 @@
     <Compile Include="Costos.Designer.cs">
       <DependentUpon>Costos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Diseñador.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Diseñador.Designer.cs">
-      <DependentUpon>Diseñador.cs</DependentUpon>
-    </Compile>
     <Compile Include="Empleados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,9 +128,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Costos.resx">
       <DependentUpon>Costos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Diseñador.resx">
-      <DependentUpon>Diseñador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Empleados.resx">
       <DependentUpon>Empleados.cs</DependentUpon>
@@ -226,6 +217,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Tipos-de-clientes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\81501.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

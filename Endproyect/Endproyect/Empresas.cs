@@ -1,5 +1,4 @@
 ﻿using System;
-
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -56,7 +55,7 @@ namespace Endproyect
         private void NuevoRegistro()
         {
             string connection = "datasource=localhost;port=3306;username=root;password=;database=xray";
-            string query = "INSERT INTO empresas (`id4`, `nombre`, `nom_titular`, `marca`, `contacto`, `correo`) VALUES (NULL,'" + textBox1.Text + "', '" + textBox3.Text + "', '" + textBox4.Text +"', '" + textBox5.Text+ "', '"+ textBox6.Text+ "')";
+            string query = "INSERT INTO empresas (`id_empresa`, `nombre`, `nom_titular`, `marca`, `contacto`, `correo`) VALUES (NULL,'" + textBox1.Text + "', '" + textBox3.Text + "', '" + textBox4.Text +"', '" + textBox5.Text+ "', '"+ textBox6.Text+ "')";
             MySqlConnection conectionDatabase = new MySqlConnection(connection);
             MySqlCommand databaseCommand = new MySqlCommand(query, conectionDatabase);
             databaseCommand.CommandTimeout = 60;
@@ -111,7 +110,7 @@ namespace Endproyect
         private void Buscar()
         {
             string Connect = "datasource=localhost;port=3306;username=root;password=;database=xray";
-            string query = "SELECT * FROM empresas where id4= '" + textBox2.Text + "'";
+            string query = "SELECT * FROM empresas where id_empresa= '" + textBox2.Text + "'";
             MySqlConnection databaseConnection = new MySqlConnection(Connect);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;
@@ -146,10 +145,45 @@ namespace Endproyect
             }
         }
 
+        private void Actualizarlist()
+        {
+            string connection = "datasource=localhost;port=3306;username=root;password=;database=xray";
+            string query = "SELECT * FROM empresas where id_empresa = '" + textBox2.Text + "'";
+            MySqlConnection conectionDatabase = new MySqlConnection(connection);
+            MySqlCommand databaseCommand = new MySqlCommand(query, conectionDatabase);
+            databaseCommand.CommandTimeout = 60;
+            MySqlDataReader reader;
+
+            try
+            {
+                conectionDatabase.Open();
+                reader = databaseCommand.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5) };
+                        var listViewItem = new ListViewItem(row);
+                        listView1.Items.Add(listViewItem);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Empresa no encontrada.");
+
+                }
+                conectionDatabase.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void ActualizarRegistro()
         {
             string Connect = "datasource=localhost;port=3306;username=root;password=;database=xray";
-            string query = "UPDATE `empresas` SET `id4`='" + textBox2.Text + "',`nombre`='" + textBox1.Text + "',`nom_titular`='" + textBox3.Text + "',`marca`='" + textBox4.Text + "',`contacto`='" + textBox5.Text + "',`correo`='" + textBox6.Text + "'";
+            string query = "UPDATE `empresas` SET `id_empresa`='" + textBox2.Text + "',`nombre`='" + textBox1.Text + "',`nom_titular`='" + textBox3.Text + "',`marca`='" + textBox4.Text + "',`contacto`='" + textBox5.Text + "',`correo`='" + textBox6.Text + "'";
             MySqlConnection databaseConnection = new MySqlConnection(Connect);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;
@@ -176,7 +210,7 @@ namespace Endproyect
         private void Eliminar()
         {
             string Connect = "datasource=localhost;port=3306;username=root;password=;database=xray";
-            string query = "DELETE FROM empresas WHERE id4 = '"+textBox2.Text+"'";
+            string query = "DELETE FROM empresas WHERE id_empresa = '"+textBox2.Text+"'";
             MySqlConnection databaseConnection = new MySqlConnection(Connect);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;
@@ -261,6 +295,7 @@ namespace Endproyect
         private void button2_Click(object sender, EventArgs e)
         {
             Buscar();
+            Actualizarlist();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -337,6 +372,11 @@ namespace Endproyect
             this.Hide();
             menu_admins menu2 = new menu_admins();
             menu2.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Actualizar();
         }
     }
 }
