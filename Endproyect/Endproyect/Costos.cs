@@ -56,7 +56,7 @@ namespace Endproyect
         private void NuevoRegistro()
         {
             string connection = "datasource=localhost;port=3306;username=root;password=;database=xray";
-            string query = "INSERT INTO costos (`id2`, `precio`, `equipo`, `no_serie`, `estado`) VALUES (NULL,'" + textBox2.Text + "', '" + textBox3.Text + "', '" + textBox4.Text + "', '" + comboBox1.Text + "')";
+            string query = "INSERT INTO costos (`id2`, `precio`, `equipo`, `no_serie`, `estado`) VALUES (NULL,'" + textBox2.Text + "', '" + textBox3.Text + "', '" + textBox4.Text + "', '" + textBox5.Text + "')";
             MySqlConnection conectionDatabase = new MySqlConnection(connection);
             MySqlCommand databaseCommand = new MySqlCommand(query, conectionDatabase);
             databaseCommand.CommandTimeout = 60;
@@ -130,7 +130,7 @@ namespace Endproyect
                         textBox1.Text = row[1];
                         textBox3.Text = row[2];
                         textBox4.Text = row[3];
-                        comboBox1.Text = row[4];
+                        textBox5.Text = row[4];
                     }
                 }
                 else
@@ -148,7 +148,7 @@ namespace Endproyect
         private void ActualizarRegistro()
         {
             string Connect = "datasource=localhost;port=3306;username=root;password=;database=xray";
-            string query = "UPDATE `costos` SET `id2`='" + textBox1.Text + "',`precio`='" + textBox2.Text + "',`equipo`='" + textBox3.Text + "',`no_serie`='" + textBox4.Text + "',`estado`='" + comboBox1.Text + "'";
+            string query = "UPDATE `costos` SET `id2`='" + textBox1.Text + "',`precio`='" + textBox2.Text + "',`equipo`='" + textBox3.Text + "',`no_serie`='" + textBox4.Text + "',`estado`='" + textBox5.Text + "'";
             MySqlConnection databaseConnection = new MySqlConnection(Connect);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;
@@ -163,7 +163,7 @@ namespace Endproyect
                 textBox2.Text = "";
                 textBox3.Text = "";
                 textBox4.Text = "";
-                comboBox1.Text = "";
+                textBox5.Text = "";
             }
             catch (Exception ex)
             {
@@ -188,7 +188,7 @@ namespace Endproyect
                 textBox2.Text = "";
                 textBox3.Text = "";
                 textBox4.Text = "";
-                comboBox1.Text = "";
+                textBox5.Text = "";
             }
             catch (Exception ex)
             {
@@ -271,14 +271,6 @@ namespace Endproyect
             {
                 MessageBox.Show("No tienes nombre del titular");
             }
-            else if (textBox4.Text == "")
-            {
-                MessageBox.Show("No pusiste numero de serie.");
-            }
-            else if (comboBox1.Text == "")
-            {
-                MessageBox.Show("No pusiste número de estado");
-            }
             else
             { 
                 NuevoRegistro();
@@ -286,7 +278,7 @@ namespace Endproyect
                 textBox1.Text = "";
                 textBox3.Text = "";
                 textBox4.Text = "";
-                comboBox1.Text = "";
+                textBox5.Text = "";
             }
         }
 
@@ -310,7 +302,7 @@ namespace Endproyect
             {
                 MessageBox.Show("No pusiste numero de serie.");
             }
-            else if (comboBox1.Text == "")
+            else if (textBox5.Text == "")
             {
                 MessageBox.Show("No pusiste número de estado");
             }
@@ -322,7 +314,7 @@ namespace Endproyect
                 textBox2.Text = "";
                 textBox3.Text = "";
                 textBox4.Text = "";
-                comboBox1.Text = "";
+                textBox5.Text = "";
             }
         }
 
@@ -336,7 +328,7 @@ namespace Endproyect
             textBox2.Text = "";
             textBox3.Text = "";
             textBox4.Text = "";
-            comboBox1.Text = "";
+            textBox5.Text = "";
         }
 
         private void button5_Click(object sender, EventArgs e)

@@ -88,6 +88,7 @@ namespace Endproyect
                 reader = databaseCommand.ExecuteReader();
                 if (reader.HasRows)
                 {
+                    listView1.Items.Clear();
                     while (reader.Read())
                     {
                         string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5) };
